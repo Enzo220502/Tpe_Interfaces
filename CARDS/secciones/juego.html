@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Your Car</title>
+
+    <link rel="icon" href="../img/koe.ico">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="container-cabecera">
+            <div class="cabecera-izq">
+                <div class="logo">
+                    
+                    <img class="imagen" src="../img/koe.ico" alt="logo">
+
+                </div>
+                <div class="your-car">
+
+                    <a id="your">YOUR</a>
+                    <a id="car">CAR</a>
+                </div>
+            
+            </div>
+
+            <div class="btn_menu"><a>MENÚ</a></div>    
+            
+        </div>
+        <div class="menu">
+            <ul class="navigation">
+                <li><a class="secciones" href="../index.html">HOME</a></li>
+                <li><a class="secciones" href="catalogo.html">CATÁLOGO</a></li>
+                <li><a class="secciones" href="servicios.html">SERVICIOS</a></li>
+                <li><a class="secciones" href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--ventana modal-->
+    <section id="modalContainer" class="modalContainer">
+        <div class="modal">
+        <fieldset>
+            <legend>YOUR CAR dice</legend>
+            <p id="txtModal"></p>
+            <button id="cerrar">Cerrar</button>
+        </fieldset>
+        </div>
+    </section>
+    <!--fin ventana modal-->
+    
+    <main class="content">
+        <!--Inicio datos de contacto-->
+        <div class="container">
+            <h1>¿QUIERE PONERSE EN CONTACTO CON NOSOTROS?</h1>
+            <div class="contacto">
+                <section class="seccionDatosContacto">
+                    <article class="nuestrosdatos">
+                        <p>Puede hacerlo personalmente en nuestro local, por cualquiera de las
+                        otras formas de contacto, o complete el formulario 
+                        y a la brevedad nos comunicaremos con Usted.
+                        Muchas gracias.</p>
+                        <p><span>Oficinas, salón de exposición y ventas:</span>  Av. España 366
+                        7000 - Tandil - Buenos Aires - Argentina</p>
+                        <p><span>Teléfonos:</span>  (249) 555-5555 al 5560</p>
+                        <p class="mediosContacto"><span>Administración:</span> administracion@yourcar.com.ar</p>
+                        <p class="mediosContacto"><span>Ventas:</span> ventas@yourcar.com.ar</p>
+                        <p class="mediosContacto"><span>Servicios:</span> servicios@yourcar.com.ar</p>
+                        <div class=redesSociales>
+                            <p class="facebook"><img class="logosRSociales" src="../img/iconos/IconoFacebook.png"><span>Facebook: </span> @YourCarAutomovil</p>
+                            <p class="twitter"><img class="logosRSociales" src="../img/iconos/IconoTwitter.png"><span>Twitter: </span> @YC_Automovil</p>
+                            <p class="instagram"><img class="logosRSociales" src="../img/iconos/IconoInstagram.png"><span>Instagram: </span> YC_Automovil</p>
+                            <p class="telegram"><img class="logosRSociales" src="../img/iconos/IconoTelegram.png"><span>Telegram: </span> @YC_Automovil</p>
+                        </div>
+                    </article>
+                </section>
+        <!--Fin datos de contacto-->
+        <!--Inicio formulario de contacto-->
+                <section class="seccionFormContacto">            
+                    <div class="formcontacto">
+                        <form>
+                            <input class="nombre" id="nombre" type="text" value="" placeholder=" Nombre/s" />
+                            <input class="apellido" id="apellido" type="text" value="" placeholder=" Apellido/s"/>
+                            <input class="telefono" id="telefono" type="text" value="" placeholder=" Teléfono"/>
+                            <input class="email" id="email" type="text" value="" placeholder="e-Mail"/>
+                            <textarea class="comentario" id="comentario" rows="8" cols="75" resize=none placeholder="Comentario"></textarea>
+                            <input class="captcha" id="captcha" type="text" placeholder="¿Eres un humano?, ingresa el captcha." value="">
+                            <button class="btn-enviar" id="btn-enviar" type="submit">Enviar</button>
+                        </form>
+                        <figure>
+                            <img id="imagenCaptcha" class="imagenCaptcha" src="" alt="Imagen de Captcha">
+                        </figure>
+                    </div>
+                </section>
+            </div>
+            <section class="ubicacion">
+                <h1>DONDE ESTAMOS:</h1>
+                <iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12692.326779224362!2d-59.18456475!3d-37.316892499999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1621648128733!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy"></iframe>
+                <!--<iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12692.326779224362!2d-59.193319480224595!3d-37.3168925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1618626490151!5m2!1ses-419!2sar" ></iframe>-->
+            </section>
+        </div>
+        <!--Fin formulario de contacto-->
+    </main>
+    <script type="text/javascript" src="../js/formulario.js"></script>
+    <footer class="footer">  
+        <a class="pie-de-pagina">Your </a><a id="car2">Car</a><a class="pie-de-pagina"> - 2021 - Tpe 060 - Copyright &copy 2021 Automovil Your Car. Todos los derechos reservados.</a>
+    </footer>
+    <script src="../js/formulario.js"></script>
+    <script src="../js/header.js"></script>

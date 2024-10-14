@@ -1,0 +1,663 @@
+/* VARIABLES */
+:root {
+    --color-azul-3: rgba(0,47,98) ;
+    --color-azul-2: rgba(0,69,143) ;
+    --color-azul-1: rgba(0,99,206) ;
+    --color-azul-0: rgba(0,122,255) ;
+    --color-azul--1: rgba(46,146,255) ;
+    --color-azul--2: rgba(114,181,255);
+    --color-azul--3: rgba(175,213,255);
+    --color-naranja-3:rgba(168,84,0);
+    --color-naranja-2:rgba(200,100,0);
+    --color-naranja-1: rgba(277,114,0);
+    --color-naranja-0:rgba(255,128,0);
+    --color-naranja--1:rgba(255,150,44);
+    --color-naranja--2:rgba(255,172,89);
+    --color-naranja--3:rgba(252,207,163);
+    --color-negro:rgba(37,36,33);
+    --color-gris:rgba(217,217,217);
+    --color-blanco:rgba(247,247,247);
+    --sombras : 5px 5px 15px rgba(0,0,0,0.5);
+}
+
+
+*{
+    font-family: 'Rowdies';
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #343F4F;
+}
+
+div.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    height: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+}
+
+/* CARRUSEL */
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: 1310px;
+    margin-left: 65px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.wrapper i{
+    top:40%;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 4;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 48px;
+    background: var(--color-blanco);
+    border-radius: 50%;
+}
+
+.wrapper i:first-child{
+    left: 10px;
+}
+
+.wrapper i:last-child{
+    right: 10px;
+}
+
+.wrapper .carousel{
+    display: flex;
+    font-size: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior:smooth;
+    transition: ease 0.5s;
+}
+
+.carousel.dragging{
+    cursor:grab;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card-l{
+    pointer-events: none;
+}
+
+.moving-l{
+    scroll-behavior: smooth;
+    transform: skew(10deg);
+}
+
+.moving-r{
+    scroll-behavior: smooth;
+    transform: skew(-10deg);
+}
+
+.carousel .card-l:last-child{
+  margin-right: 20px;
+}
+
+@media(max-width: 900px){
+    .carousel,.wrapper{
+    }
+}
+
+@media(max-width: 550px){
+    .carousel,.wrapper{
+    }
+}
+
+/* Contenedor Cards */
+
+.contenedor-cards{
+    display:flex;
+    flex-direction: row;
+    position: relative;
+    max-width: 1310px;
+    width: 100vw;
+    right: 20px;
+    height: 250px;
+    margin-left: 4.025rem;
+    margin-right: 4.025rem;
+}
+
+/* CARD */
+
+.card .superior-card{
+    display: flex;
+    width: 250px;
+    height: 150px;
+    background-color: #BFBFBF;
+    border-radius: 15px 15px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--sombras);
+}
+
+.card .inferior-card{
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 60px;
+    background-color: var(--color-blanco);
+    border-radius: 0px 0px 15px 15px;    
+    box-shadow: var(--sombras);
+}
+
+.card{
+    max-width: 250px;
+    max-height: 210px;
+    margin-top:2%;
+    border-radius: 10px;
+    margin-left:15px;
+    cursor: pointer;
+    transition:ease 0.5s;
+}
+
+.card:first-child{
+  margin-left: 20px;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: var(--sombras);
+}
+
+div.info-card{
+    position:relative;
+    z-index: 1;
+    padding:0;
+    width: 218px;
+    height: 60px;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+div.categoria-card {
+    height: 15px;
+}
+
+div.nombre-card {
+    height: 27px;
+    margin-top: 15px;
+}
+
+p.categoria-card{
+    font-family: 'Rowdies';
+    font-size: 1rem;
+    color: var(--color-negro);
+    opacity: 40%;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;             
+    text-overflow: ellipsis;
+    user-select: none;
+}
+
+p.nombre-card{
+    font-family: 'Rowdies';
+    font-size: 1rem;
+    color: var(--color-negro);
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;             
+    text-overflow: ellipsis;
+    user-select: none;
+}
+
+/* CARD L */
+
+.card-l{
+    width: 300px;
+    height: 247px;
+    cursor: pointer;
+}
+
+.carousel .card-l{
+    height: 277px;
+    object-fit: cover;
+    margin-left: 20px;
+    margin-top:2%;
+    margin-bottom:2%;
+    transition: ease 0.5s;
+}
+
+.carousel .card-l:first-child{
+    margin-left: 0px;
+}
+
+.carousel .card-l:first-child:hover{
+    margin-left: 20px;
+}
+
+.card-l:hover{
+    transform: scale(1.05);
+    box-shadow: var(--color-negro);
+}
+
+.superior-card-l{
+    display: flex;
+    width: 300px;
+    min-height: 177px;
+    background-color: #BFBFBF;
+    border-radius: 15px 15px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--sombras);
+}
+
+.inferior-card-l{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 70px;
+    background-color: var(--color-blanco);
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: var(--sombras);
+}
+
+.info-card-l {
+    position:relative;
+    z-index: 1;
+    background-color: var(--color-blanco);
+    padding:0;
+    width: 260px;
+    height: 70px;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.categoria-card-l {
+    height: 21px;
+    margin-bottom: 12px;  
+}
+
+.nombre-card-l {
+    height: 21px;
+}
+
+p.categoria-card-l{
+    font-family: 'Rowdies';
+    font-size: 1.12rem;
+    color: var(--color-negro);
+    opacity: 40%;
+    width: 190px;
+    white-space: nowrap;
+    overflow: hidden;             
+    text-overflow: ellipsis;
+    user-select: none;
+}
+
+p.nombre-card-l {
+    font-family: 'Rowdies';
+    font-size: 1.5rem;
+    color: var(--color-negro);
+    width: 262px;
+    height: 30px;
+    white-space: nowrap;
+    overflow: hidden;             
+    text-overflow: ellipsis;
+    user-select: none;
+}
+
+/* Estilo Etiqueta*/
+
+.etiqueta{
+    position: relative;
+    z-index: 3;
+    width: 64px;
+    height: 44px;
+    right:93px;
+    bottom:37px;
+    border: var(--color-blanco) 2px solid;
+    border-radius: 0px 5px 0px 0px;
+}
+
+
+.frente-precio,.frente-porcentaje{
+    --color-naranja--2 : rgba(255,172,89);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 60px;
+    height: 34px;
+    border: var(--color-blanco) 2px 2px 2px 0px solid;
+    border-radius: 0px 5px 0px 0px;
+    background-color: var(--color-naranja--2);
+}
+
+.fondo-precio,.fondo-porcentaje{
+    --color-naranja-0:rgba(255,128,0,0.6);
+    position: relative;
+    z-index: 1;
+    width: 60px;
+    height: 34px;
+    bottom:27px;
+    background-color: var(--color-naranja-0);
+}
+
+.frente-precio span,.frente-porcentaje span{
+  position: relative;
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  user-select: none;
+}
+
+
+/* Estilo Etiqueta Porcentaje */
+
+.frente-porcentaje{
+    background-color: rgba(105,204,105);
+}
+
+.fondo-porcentaje{
+    background-color: rgba(82,163,82);
+}
+
+
+/* Estilo Caja Etiqueta Grande*/
+
+.etiqueta-l{
+    position: relative;
+    z-index: 3;
+    width: 72px;
+    height: 47px;
+    right: 114px;
+    bottom: 44px;
+    border: var(--color-blanco) 2px solid;
+    border-radius: 0px 5px 0px 0px;
+}
+
+/* Estilo Etiqueta Grande con Precio */
+
+.frente-precio-l,.frente-porcentaje-l{
+    --color-naranja--2 : rgba(255,172,89);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 69px;
+    height: 37px;
+    border: var(--color-blanco) 2px 2px 2px 0px solid;
+    border-radius: 0px 5px 0px 0px;
+    background-color: var(--color-naranja--2);
+}
+
+.fondo-precio-l,.fondo-porcentaje-l{
+    --color-naranja-0:rgba(255,128,0,0.6);
+    position: relative;
+    z-index: 1;
+    width: 69px;
+    height: 41px;
+    bottom:35px;
+    background-color: var(--color-naranja-0);
+}
+
+.frente-precio-l span,.frente-porcentaje-l span{
+  position: relative;
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* Estilo Etiqueta Grande con Porcentaje*/
+
+.frente-porcentaje-l{
+    background-color: rgba(105,204,105);
+}
+
+.fondo-porcentaje-l{
+    background-color: rgba(82,163,82);
+}
+
+/* Estilo Boton Play y Play con Carrito */
+
+.btn-card,.btn-card-buy{
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor:pointer;
+    bottom:85px;
+    left: 180px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-negro);
+    transition: ease 0.4s;   
+}
+
+.btn-card-buy.clicked{
+    background-color: var(--color-naranja--2);
+}
+
+.btn-card-buy.clicked #ico-cart, .btn-card-buy.clicked #ico-plus-cart{
+    stroke:var(--color-negro);
+}
+
+.btn-card:hover,.btn-card-buy:hover{
+    background-color: var(--color-naranja--2);
+    transition: ease 0.4s;   
+}
+
+#ico-cart{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    stroke:var(--color-blanco);
+    user-select: none;    
+}
+
+.btn-card-buy:hover #ico-cart{
+    stroke: var(--color-negro);
+}
+
+#ico-plus-cart{
+    position: absolute;
+    width: 9px;
+    height: 10px;
+    stroke: var(--color-blanco);
+    bottom: 27.5px;
+    left: 22px;
+}
+
+.btn-card-buy:hover #ico-plus-cart{
+    stroke:var(--color-negro);
+    left:22px;
+}
+
+#ico-check-cart{
+    position: absolute;
+    stroke:var(--color-negro);
+    bottom:50px;
+    left: 22px;
+}
+
+.btn-card-buy.clicked #ico-check-cart{
+    stroke: var(--color-negro);
+    animation: moveCheck 0.8s linear forwards;
+}
+
+.btn-card-buy.clicked #ico-plus-cart{
+    display: none;
+}
+
+#ico-play{
+    position: relative;
+    right: -2px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50%;
+    stroke:var(--color-blanco);
+    user-select: none;
+}
+
+.btn-card:hover #ico-play{
+    stroke: var(--color-negro);
+}
+
+/* Estilo Boton Carrito */
+
+
+
+/* Estilo Boton Play Grande*/
+
+.btn-card-l,.btn-card-buy-l{
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    overflow: hidden;
+    bottom:100px;
+    left: 218px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-negro);
+}
+
+.btn-card-l:hover,.btn-card-buy-l:hover{
+    background-color: var(--color-naranja--2);
+    transition: ease 0.4s;
+}
+
+#ico-cart-l{
+    position: absolute;
+    stroke:var(--color-blanco);
+    width: 28px;
+    height: 28px;
+}
+
+.btn-card-buy-l:hover #ico-cart-l{
+    stroke:var(--color-negro);
+    transition: ease 0.4s;
+}
+
+.btn-card-buy-l:hover #ico-plus-cart-l{
+    stroke:var(--color-negro);
+    left: 27px;
+    transition: ease 0.4s;
+}
+
+#ico-plus-cart-l{
+    position: absolute;
+    width: 10px;
+    height: 11px;
+    stroke: var(--color-blanco);
+    bottom:33px;
+    left:27.5px;
+}
+
+#ico-check-cart-l{
+    position: absolute;
+    width: 12px;
+    height: 9px;
+    stroke: var(--color-blanco);
+    top:-9px;
+    left:26.5px;
+}
+
+.btn-card-buy-l.clicked-l #ico-check-cart-l{
+    stroke: var(--color-negro);
+    animation: moveCheck-l 0.8s linear forwards;
+}
+
+.btn-card-buy-l.clicked-l #ico-plus-cart-l{
+    display: none;
+}
+
+.btn-card-buy-l.clicked-l{
+    background-color: var(--color-naranja--2);
+}
+
+.btn-card-buy-l.clicked-l #ico-cart-l, .btn-card-buy-l.clicked-l #ico-plus-cart-l{
+    stroke:var(--color-negro);
+}
+
+
+
+
+#ico-play-l{
+    position: relative;
+    right: -2px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 50%;
+    stroke:var(--color-blanco);
+    user-select: none;
+}
+
+#ico-play-l:hover{
+    stroke: var(--color-negro);
+}
+
+/*
+Tiene que quedar en bottom 29 px y left 20 px
+*/
+
+/* Funciones Keyframes */
+
+@keyframes moveCheck {
+    0% {
+        transform: rotate(-35deg);
+    }
+    25% {
+        transform: translateY(5px) rotate(70deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(-35deg);
+    }
+    75% {
+        transform: translateY(16px) rotate(70deg);
+    }
+    100% {
+        transform: translateY(21px) rotate(0deg);
+    }
+}
+
+
+@keyframes moveCheck-l {
+    0% {
+        transform: rotate(-35deg);
+    }
+    25% {
+        transform: translateY(5px) rotate(70deg);
+    }
+    50% {
+        transform: translateY(11.5px) rotate(-35deg);
+    }
+    75% {
+        transform: translateY(18px) rotate(70deg);
+    }
+    100% {
+        transform: translateY(25px) rotate(0deg);
+    }
+}
