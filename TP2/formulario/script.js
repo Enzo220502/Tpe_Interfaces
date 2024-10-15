@@ -133,6 +133,7 @@ document.getElementById('btn-registrar').addEventListener('click', () => {
     // Obtener los valores de los campos de entrada
     const nombre = document.getElementById("nombre");
     const apellido = document.getElementById("apellido");
+    const nickname = document.getElementById("nickname");
     const edad = document.getElementById("edad");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
@@ -204,6 +205,7 @@ document.getElementById('btn-registrar').addEventListener('click', () => {
         // Limpiar campos si no hay errores
         nombre.value = "";
         apellido.value = "";
+        nickname.value ="";
         edad.value = "";
         email.value = "";
         password.value = "";
