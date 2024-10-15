@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Login / Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-content">
+            <div class="form-login">
+
+                <img src="image.png" alt="fondo-login-desvanecimiento" class="imagen-desvanecimiento-inicio ">
+
+                <form class="formulario" id="loginForm">
+                    <label for="email" class="label-de-input">Email</label>
+                    <div class="input-con-logo">
+                        <input type="email"  required>
+                        <img src="logo-email-input.png" alt="logo-email-input" class="input-icon">
+                    </div>
+
+                    <label for="password" class="label-de-input">Contraseña</label>
+                    <div class="input-con-logo">
+                        <input type="password"  required>
+                        <img src="logo-contrasena-input.png" alt="logo-password-input" class="input-icon">
+                    </div>
+
+                    <div class="captcha">
+                        <label class="captcha-label">
+                            <input type="checkbox" class="checkbox-animado-login" required>
+                            <div class="cargando" id="cargando-animacion-login"></div>
+                            <!-- Elemento para la animación -->
+
+                        </label>
+
+                        <div class="texto-captcha">
+                            No soy un robot <img src="captcha.png" alt="imagen-captcha" class="imagen-captcha">
+
+                        </div>
+
+                    </div>
+
+                    <button type="submit">INICIAR SESION</button>
+
+                    <div class="iconos-y-h2">
+                        <div class="social-icons">
+                            <img src="facebook.png" alt="imagen-facebook" class="imagen-facebook">
+                            <img src="google.png" alt="imagen-google" class="imagen-google">
+                        </div>
+
+                        <h2> ¿No tienes cuenta? <span class="registrate" id="goToRegister">REGISTRATE</span> </h2>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-register">
+                <img src="image.png" alt="fondo-login" class="imagen-form">
+
+                <img src="image.png" alt="fondo-login-desvanecimiento" class="imagen-desvanecimiento-registro ">
+
+
+                <form class="formulario" id="form-registro">
+                    
+                    <div class="info-container">
+                        <p class="alerta" id="alerta-nombre"></p>
+                    </div>
+
+                    <label for="nombre" class="label-de-input">Nombre</label>
+                    <input type="text" id="nombre">
+                    
+                    <div class="info-container">
+                        <p class="alerta" id="alerta-apellido"></p>
+                    </div>
+
+                    <label for="apellido" class="label-de-input">Apellido</label>
+                    <input type="text" id="apellido">
+
+
+                    <label for="nickname" class="label-de-input">Nickname (opcional)</label>
+                    <input type="text">
+
+                    <div class="info-container">
+                        <p class="alerta" id="alerta-edad"></p>
+                    </div>
+                    <label for="Edad" class="label-de-input">Edad</label>
+                    <input type="number" id="edad">
+
+                    <div class="info-container">
+                        <p class="alerta" id="alerta-email"></p>
+                    </div>
+                    <label for="email" class="label-de-input">Email</label>
+                    <div class="input-con-logo">
+                        <input type="email" id="email">
+                        <img src="logo-email-input.png" alt="logo-email-input" class="input-icon">
+                    </div>
+
+
+                    <div class="info-container">
+                        <p class="alerta" id="alerta-password"></p>
+                    </div>
+                    <label for="contraseña" class="label-de-input">Contraseña</label>
+                    <div class="input-con-logo">
+                        <input type="password" id="password">
+                        <img src="logo-contrasena-input.png" alt="logo-password-input" class="input-icon">
+                    </div>
+
+
+                    <div class="info-container">
+                        <p class="alerta" id="alerta-confirmar-password"></p>
+                    </div>
+                    <label for="confirmar Contraseña" class="label-de-input">Confirmar Contraseña</label>
+                    <div class="input-con-logo">
+                        <input type="password" id="confirmar-password">
+                        <img src="logo-contrasena-input.png" alt="logo-password-input" class="input-icon">
+                    </div>
+
+
+
+                    <div class="info-container">
+                        <p class="alerta" id="alerta-captcha-registro"></p>
+                    </div>
+                        <div class="captcha">
+
+                            <label class="captcha-label">
+                                <input type="checkbox" class="checkbox-animado-registro" id="checkbox-captcha-registro" required>
+                                <div class="cargando" id="cargando-animacion-registro"></div>
+                                <!-- Elemento para la animación -->
+
+                            </label>
+
+                            <div class="texto-captcha">
+                                No soy un robot <img src="captcha.png" alt="imagen-captcha" class="imagen-captcha">
+
+                            </div>
+
+                        </div>
+
+                        <button type="button" id="btn-registrar">REGISTRAR</button>
+
+                        <div class="info-container">
+                            <p class="alerta-envio" id="alerta"> </p>
+                            </div>
+
+                        <div class="social-icons">
+                            <img src="facebook.png" alt="imagen-facebook" class="imagen-facebook">
+                            <img src="google.png" alt="imagen-google" class="imagen-google">
+                        </div>
+
+                        <h2> ¿Ya tienes cuenta? <span class="iniciar-sesion" id="goToLogin">INICIAR SESION</span> </h2>
+                </form>
+
+                <div class="comprobacion-formulario">
+                    <div class="circulo-izquierda" id="circulo-izquierda"></div>
+                    <div class="circulo-derecha" id="circulo-derecha"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
