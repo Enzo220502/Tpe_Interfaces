@@ -69,10 +69,6 @@
   right: 15px;
 }
 
-.carousel{
-  padding-left: 10px;
-}
-
 .wrapper .carousel{
   display: flex;
   overflow: hidden;
@@ -101,7 +97,7 @@
 }
 
 .carousel .card-l:last-child{
-margin-right: 20px;
+  margin-right: 20px;
 }
 
 /* Contenedor Cards */

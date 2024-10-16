@@ -24,7 +24,7 @@
   width:100%;
   max-width: 1300px;
   background-color: var(--color-azul-3);
-  padding-top: 60px;
+  padding-top: 50px;
 }
 ul.breadcrumb {
   display: flex;
@@ -350,4 +350,12 @@ ul.breadcrumb img{
   height: 100%;
   width: 100%;
   padding: 8px;
+}
+#texto-carrito{
+  font-size: 36px;
+  color:var(--color-blanco);
+  margin-top: 97px;
+  font-family: 'Rowdies';
+  font-weight: bolder;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }

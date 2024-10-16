@@ -1,4 +1,3 @@
-
 :root{
   --color-principal: rgb(0, 122, 255);
   --color-azul-1:rgb(0, 99, 206);
@@ -582,6 +581,8 @@ span.texto-inferior{
   outline: none;
   border: none;
   background-color: var(--color-blanco);
+  font-family: 'Rowdies';
+  font-weight: lighter;
 }
 .menu-desplegable-barradebusqueda img{
   height: 20px;
@@ -736,6 +737,8 @@ span.texto-inferior{
   }
   .cabecera-cen-barradebusqueda input{
     font-size: 16px;
+    font-family: 'Rowdies';
+    font-weight: lighter;
     width: 100%;
     border: none;
     outline: none;
@@ -788,6 +791,7 @@ span.texto-inferior{
     width: auto;
     height: 34px;
     align-items: center;
+    white-space: nowrap;
   }
   .menu-desplegable-item a img{
     width: auto;
@@ -890,5 +894,11 @@ span.texto-inferior{
   .footer-inferior-derechos{
     position:absolute;
     right: 20px;
+  }
+  
+  footer.footer h3.footer{
+    font-size: 18px;
+    font-weight: lighter;
+    white-space: nowrap;
   }
 }
