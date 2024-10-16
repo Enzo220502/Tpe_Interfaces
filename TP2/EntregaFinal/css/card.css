@@ -35,7 +35,8 @@
   max-width: 1300px;
   padding-top: 100px;
 }
-/* CARRUSEL */
+
+/*----------------------- CARRUSEL -----------------------*/
 .wrapper{
   display: flex;
   justify-content: center;
@@ -106,20 +107,21 @@ margin-right: 20px;
 /* Contenedor Cards */
 
 .contenedor-cards{
-  padding-left: 10px;
-  display:flex;
   position: relative;
-  justify-content: space-between;
+  display:grid;
+  grid-auto-rows: 210px;
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  gap:10px;
   max-width: 1300px;
-  height: 250px;
+  height: auto;
   margin-bottom: 50px;
 }
 
 /* CARD */
 
 .card{
-  max-width: 250px;
-  max-height: 210px;
+  width: 250px;
+  height: 210px;
   border-radius: 10px;
   cursor: pointer;
   transition:ease 0.5s;
@@ -362,10 +364,10 @@ p.nombre-card-l {
   justify-content: center;
   align-items: center;
   z-index: 2;
-  width: 60px;
+  width: 61px;
   height: 34px;
   border: var(--color-blanco) 2px 2px 2px 0px solid;
-  border-radius: 0px 5px 0px 0px;
+  border-radius: 0px 3px 0px 0px;
   background-color: var(--color-naranja--2);
 }
 
@@ -373,7 +375,7 @@ p.nombre-card-l {
   --color-naranja-0:rgba(255,128,0,0.6);
   position: relative;
   z-index: 1;
-  width: 60px;
+  width: 61px;
   height: 34px;
   bottom:27px;
   background-color: var(--color-naranja-0);
@@ -424,7 +426,7 @@ user-select: none;
   width: 69px;
   height: 37px;
   border: var(--color-blanco) 2px 2px 2px 0px solid;
-  border-radius: 0px 5px 0px 0px;
+  border-radius: 0px 3px 0px 0px;
   background-color: var(--color-naranja--2);
 }
 
@@ -434,7 +436,7 @@ user-select: none;
   z-index: 1;
   width: 69px;
   height: 41px;
-  bottom:35px;
+  bottom:34.5px;
   background-color: var(--color-naranja-0);
 }
 

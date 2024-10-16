@@ -222,3 +222,4 @@ checkboxCaptchaRegistro.addEventListener("change", () => {
         alertaCaptchaRegistro.innerHTML = "";
     }
 });
+

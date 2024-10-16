@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Gamestoon</title>
-
     <link rel="icon" href="img/discord-logo.ico">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/game.css">
     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="header">
@@ -415,7 +414,218 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <div class="carousel">      
+                <div class="card-l" draggable="true">  
+                    <div class="superior-card-l" id="superior-card-l-1">
+                        <div class="etiqueta-l">
+                            <div class="frente-porcentaje-l">
+                                <span>%50</span>
+                            </div>
+                            <div class="fondo-porcentaje-l">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inferior-card-l">
+                        <div class="info-card-l">
+                            <div class="categoria-card-l"><p class="categoria-card-l" title="Multijugador">Aventura</p></div>
+                            <div class="nombre-card-l"><p class="nombre-card-l" title="4 In A Row Hora de Aventuras">Tartaventuras</p></div>
+                        </div>
+                    </div>
+                    <div class="btn-card-buy-l" tabindex="0">
+                        <svg id="ico-cart-l" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.1071 4.64544L23.4286 13.9045H7.86168M24.7679 19.1953H8.69643L6.01786 2H2M10.0357 24.4862C10.0357 25.2167 9.43609 25.8089 8.69643 25.8089C7.95677 25.8089 7.35714 25.2167 7.35714 24.4862C7.35714 23.7557 7.95677 23.1635 8.69643 23.1635C9.43609 23.1635 10.0357 23.7557 10.0357 24.4862ZM24.7679 24.4862C24.7679 25.2167 24.1682 25.8089 23.4286 25.8089C22.6889 25.8089 22.0893 25.2167 22.0893 24.4862C22.0893 23.7557 22.6889 23.1635 23.4286 23.1635C24.1682 23.1635 24.7679 23.7557 24.7679 24.4862Z" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-plus-cart-l" width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.41079 5.3068H5.06257M5.06257 5.3068H1.71436M5.06257 5.3068V8.61359M5.06257 5.3068V2" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-check-cart-l" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.56904 2L7.34285 4.6983L5.11667 7.39661L2 4.69835" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-l" draggable="true">  
+                    <div class="superior-card-l" id="superior-card-l-2">
+                    </div>
+                    <div class="inferior-card-l">
+                        <div class="info-card-l">
+                            <div class="categoria-card-l"><p class="categoria-card-l" title="Multijugador">Multijugador</p></div>
+                            <div class="nombre-card-l"><p class="nombre-card-l" title="4 In A Row Hora de Aventuras">4 In A Row Hora de Aventuras</p></div>
+                        </div>
+                    </div>
+                    <a href="./game.html" class="btn-card-l">
+                        <svg id = "ico-play-l" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.93164 4.61621L24.64 16.0001L6.93164 27.3841V4.61621Z" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                
+                    </a>
+                </div>
+                <div class="card-l" draggable="true">  
+                    <div class="superior-card-l" id="superior-card-l-3">
+                        <div class="etiqueta-l">
+                            <div class="frente-precio-l">
+                                <span>$90</span>
+                            </div>
+                            <div class="fondo-precio-l"></div>
+                        </div>
+                    </div>
+                    <div class="inferior-card-l">
+                        <div class="info-card-l">
+                            <div class="categoria-card-l"><p class="categoria-card-l" title="Multijugador">Aventura</p></div>
+                            <div class="nombre-card-l"><p class="nombre-card-l" title="4 In A Row Hora de Aventuras">Batalla de Agua</p></div>
+                        </div>
+                    </div>
+                    <div class="btn-card-buy-l" tabindex="0">
+                        <svg id="ico-cart-l" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.1071 4.64544L23.4286 13.9045H7.86168M24.7679 19.1953H8.69643L6.01786 2H2M10.0357 24.4862C10.0357 25.2167 9.43609 25.8089 8.69643 25.8089C7.95677 25.8089 7.35714 25.2167 7.35714 24.4862C7.35714 23.7557 7.95677 23.1635 8.69643 23.1635C9.43609 23.1635 10.0357 23.7557 10.0357 24.4862ZM24.7679 24.4862C24.7679 25.2167 24.1682 25.8089 23.4286 25.8089C22.6889 25.8089 22.0893 25.2167 22.0893 24.4862C22.0893 23.7557 22.6889 23.1635 23.4286 23.1635C24.1682 23.1635 24.7679 23.7557 24.7679 24.4862Z" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-plus-cart-l" width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.41079 5.3068H5.06257M5.06257 5.3068H1.71436M5.06257 5.3068V8.61359M5.06257 5.3068V2" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-check-cart-l" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.56904 2L7.34285 4.6983L5.11667 7.39661L2 4.69835" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-l" draggable="true">  
+                    <div class="superior-card-l" id="superior-card-l-4">
+                        <div class="etiqueta-l">
+                            <div class="frente-precio-l">
+                                <span>$50</span>
+                            </div>
+                            <div class="fondo-precio-l"></div>
+                        </div>
+                    </div>
+                    <div class="inferior-card-l">
+                        <div class="info-card-l">
+                            <div class="categoria-card-l"><p class="categoria-card-l" title="Multijugador">Deportes</p></div>
+                            <div class="nombre-card-l"><p class="nombre-card-l" title="4 In A Row Hora de Aventuras">Copa Toon</p></div>
+                        </div>
+                    </div>
+                    <div class="btn-card-buy-l" tabindex="0">
+                        <svg id="ico-cart-l" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.1071 4.64544L23.4286 13.9045H7.86168M24.7679 19.1953H8.69643L6.01786 2H2M10.0357 24.4862C10.0357 25.2167 9.43609 25.8089 8.69643 25.8089C7.95677 25.8089 7.35714 25.2167 7.35714 24.4862C7.35714 23.7557 7.95677 23.1635 8.69643 23.1635C9.43609 23.1635 10.0357 23.7557 10.0357 24.4862ZM24.7679 24.4862C24.7679 25.2167 24.1682 25.8089 23.4286 25.8089C22.6889 25.8089 22.0893 25.2167 22.0893 24.4862C22.0893 23.7557 22.6889 23.1635 23.4286 23.1635C24.1682 23.1635 24.7679 23.7557 24.7679 24.4862Z" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-plus-cart-l" width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.41079 5.3068H5.06257M5.06257 5.3068H1.71436M5.06257 5.3068V8.61359M5.06257 5.3068V2" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-check-cart-l" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.56904 2L7.34285 4.6983L5.11667 7.39661L2 4.69835" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-l" draggable="true">  
+                    <div class="superior-card-l" id="superior-card-l-5">
+                        <div class="etiqueta-l">
+                            <div class="frente-precio-l">
+                                <span>$99</span>
+                            </div>
+                            <div class="fondo-precio-l"></div>
+                        </div>
+                    </div>
+                    <div class="inferior-card-l">
+                        <div class="info-card-l">
+                            <div class="categoria-card-l"><p class="categoria-card-l" title="Multijugador">Disparos</p></div>
+                            <div class="nombre-card-l"><p class="nombre-card-l" title="4 In A Row Hora de Aventuras">Minecraft Duty</p></div>
+                        </div>
+                    </div>
+                    <div class="btn-card-buy-l" tabindex="0">
+                        <svg id="ico-cart-l" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.1071 4.64544L23.4286 13.9045H7.86168M24.7679 19.1953H8.69643L6.01786 2H2M10.0357 24.4862C10.0357 25.2167 9.43609 25.8089 8.69643 25.8089C7.95677 25.8089 7.35714 25.2167 7.35714 24.4862C7.35714 23.7557 7.95677 23.1635 8.69643 23.1635C9.43609 23.1635 10.0357 23.7557 10.0357 24.4862ZM24.7679 24.4862C24.7679 25.2167 24.1682 25.8089 23.4286 25.8089C22.6889 25.8089 22.0893 25.2167 22.0893 24.4862C22.0893 23.7557 22.6889 23.1635 23.4286 23.1635C24.1682 23.1635 24.7679 23.7557 24.7679 24.4862Z" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-plus-cart-l" width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.41079 5.3068H5.06257M5.06257 5.3068H1.71436M5.06257 5.3068V8.61359M5.06257 5.3068V2" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-check-cart-l" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.56904 2L7.34285 4.6983L5.11667 7.39661L2 4.69835" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-l" draggable="true">  
+                    <div class="superior-card-l" id="superior-card-l-6">
+                        <div class="etiqueta-l">
+                            <div class="frente-precio-l">
+                                <span>$25</span>
+                            </div>
+                            <div class="fondo-precio-l"></div>
+                        </div>
+                    </div>
+                    <div class="inferior-card-l">
+                        <div class="info-card-l">
+                            <div class="categoria-card-l"><p class="categoria-card-l" title="Multijugador">Aventura</p></div>
+                            <div class="nombre-card-l"><p class="nombre-card-l" title="4 In A Row Hora de Aventuras">Super Mario Bross</p></div>
+                        </div>
+                    </div>
+                    <div class="btn-card-buy-l" tabindex="0">
+                        <svg id="ico-cart-l" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.1071 4.64544L23.4286 13.9045H7.86168M24.7679 19.1953H8.69643L6.01786 2H2M10.0357 24.4862C10.0357 25.2167 9.43609 25.8089 8.69643 25.8089C7.95677 25.8089 7.35714 25.2167 7.35714 24.4862C7.35714 23.7557 7.95677 23.1635 8.69643 23.1635C9.43609 23.1635 10.0357 23.7557 10.0357 24.4862ZM24.7679 24.4862C24.7679 25.2167 24.1682 25.8089 23.4286 25.8089C22.6889 25.8089 22.0893 25.2167 22.0893 24.4862C22.0893 23.7557 22.6889 23.1635 23.4286 23.1635C24.1682 23.1635 24.7679 23.7557 24.7679 24.4862Z" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-plus-cart-l" width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.41079 5.3068H5.06257M5.06257 5.3068H1.71436M5.06257 5.3068V8.61359M5.06257 5.3068V2" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-check-cart-l" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.56904 2L7.34285 4.6983L5.11667 7.39661L2 4.69835" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-l" draggable="true">  
+                    <div class="superior-card-l" id="superior-card-l-7">
+                        <div class="etiqueta-l">
+                            <div class="frente-precio-l">
+                                <span>$30</span>
+                            </div>
+                            <div class="fondo-precio-l"></div>
+                        </div>
+                    </div>
+                    <div class="inferior-card-l">
+                        <div class="info-card-l">
+                            <div class="categoria-card-l"><p class="categoria-card-l" title="Multijugador">Aventura</p></div>
+                            <div class="nombre-card-l"><p class="nombre-card-l" title="4 In A Row Hora de Aventuras">Mr.Mine</p></div>
+                        </div>
+                    </div>
+                    <div class="btn-card-buy-l" tabindex="0">
+                        <svg id="ico-cart-l" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.1071 4.64544L23.4286 13.9045H7.86168M24.7679 19.1953H8.69643L6.01786 2H2M10.0357 24.4862C10.0357 25.2167 9.43609 25.8089 8.69643 25.8089C7.95677 25.8089 7.35714 25.2167 7.35714 24.4862C7.35714 23.7557 7.95677 23.1635 8.69643 23.1635C9.43609 23.1635 10.0357 23.7557 10.0357 24.4862ZM24.7679 24.4862C24.7679 25.2167 24.1682 25.8089 23.4286 25.8089C22.6889 25.8089 22.0893 25.2167 22.0893 24.4862C22.0893 23.7557 22.6889 23.1635 23.4286 23.1635C24.1682 23.1635 24.7679 23.7557 24.7679 24.4862Z" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-plus-cart-l" width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.41079 5.3068H5.06257M5.06257 5.3068H1.71436M5.06257 5.3068V8.61359M5.06257 5.3068V2" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-check-cart-l" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.56904 2L7.34285 4.6983L5.11667 7.39661L2 4.69835" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-l" draggable="true">  
+                    <div class="superior-card-l" id="superior-card-l-8">
+                        <div class="etiqueta-l">
+                            <div class="frente-precio-l">
+                                <span>$25</span>
+                            </div>
+                            <div class="fondo-precio-l"></div>
+                        </div>
+                    </div>
+                    <div class="inferior-card-l">
+                        <div class="info-card-l">
+                            <div class="categoria-card-l"><p class="categoria-card-l" title="Multijugador">Multijugador</p></div>
+                            <div class="nombre-card-l"><p class="nombre-card-l" title="4 In A Row Hora de Aventuras">¡A Empaquetar!</p></div>
+                        </div>
+                    </div>
+                    <div class="btn-card-buy-l" tabindex="0">
+                        <svg id="ico-cart-l" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.1071 4.64544L23.4286 13.9045H7.86168M24.7679 19.1953H8.69643L6.01786 2H2M10.0357 24.4862C10.0357 25.2167 9.43609 25.8089 8.69643 25.8089C7.95677 25.8089 7.35714 25.2167 7.35714 24.4862C7.35714 23.7557 7.95677 23.1635 8.69643 23.1635C9.43609 23.1635 10.0357 23.7557 10.0357 24.4862ZM24.7679 24.4862C24.7679 25.2167 24.1682 25.8089 23.4286 25.8089C22.6889 25.8089 22.0893 25.2167 22.0893 24.4862C22.0893 23.7557 22.6889 23.1635 23.4286 23.1635C24.1682 23.1635 24.7679 23.7557 24.7679 24.4862Z" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-plus-cart-l" width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.41079 5.3068H5.06257M5.06257 5.3068H1.71436M5.06257 5.3068V8.61359M5.06257 5.3068V2" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg id="ico-check-cart-l" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.56904 2L7.34285 4.6983L5.11667 7.39661L2 4.69835" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>    
     </main>
     <footer class="footer">  
         <div class="footer-superior">
@@ -461,6 +671,7 @@
         </div>
     </footer>
     <script src="js/header.js"></script>
+    <script src="js/cards.js"></script>
     <script src="js/comentarios.js"></script>
     <script src="js/game.js"></script>
 </body>

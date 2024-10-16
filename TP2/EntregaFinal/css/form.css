@@ -6,28 +6,30 @@ body, html {
     background-color: #002F62;
     font-family: 'Rowdies', sans-serif;
 }
+
 .header {
-    background:rgb(0, 122, 255);
-    position:fixed;
-    width: 100%;
-    z-index: 5;
-    top:0;
-  }
-  .cabecera {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .cabecera-cen {
-    display: flex;
-    align-items: center;
-  }
-  .cabecera-cen-logo-xs a{
-    display: flex;
-    height: 60px;
-  }
-  .cabecera-cen-logo-xs img{
-  }
+  background:rgb(0, 122, 255);
+  position:fixed;
+  width: 100%;
+  z-index: 5;
+  top:0;
+}
+
+.cabecera {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cabecera-cen {
+  display: flex;
+  align-items: center;
+}
+
+.cabecera-cen-logo-xs a{
+  display: flex;
+  height: 60px;
+}
 
 .container {
     border-radius: 10px;
@@ -41,14 +43,10 @@ body, html {
     position: relative;
 }
 
-
-
 .form-content {
     display: flex;
     width: 100%;
 }
-
-
 
 .form-login , .form-register {
     flex: 1;
@@ -59,12 +57,6 @@ body, html {
     z-index: 5;
 
 }
-
-
-
-
-
-
 
 .imagen-form ,  .imagen-desvanecimiento-inicio , .imagen-desvanecimiento-registro{
     position: absolute; 
@@ -81,16 +73,11 @@ body, html {
 
 }
 
-
-
-
 .desvanecer {
     opacity: 0; /* Oculta visualmente */
     pointer-events: none; /* Evita la interacción mientras está oculto */
     transition: opacity 0.8s ease-in-out; /* Asegúrate de que la transición esté aquí */
 }
-
-
 
 .form-content h2 {
     font-size: 1rem;
@@ -105,8 +92,6 @@ body, html {
     -webkit-text-stroke: #002F62 0.7px;
     font-weight: bold;
 }
-
-
 
 input {
     border-radius: 5px;
@@ -128,7 +113,7 @@ label {
 
 
 
-button {
+button,#btn-form {
     width: 216px;
     height: 47px;
     background-color: #00458F;
@@ -143,7 +128,14 @@ button {
     overflow: hidden;   /* Para ocultar la línea cuando no esté visible */
 }
 
-button::before {
+#btn-form{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+button::before,#btn-form::before {
     content: "";
     position: absolute;
     top: 400%; 
@@ -156,17 +148,15 @@ button::before {
     z-index: 0;
 }
 
-button:hover::before {
+button:hover::before,#btn-form:hover::before {
     top: 0;
     left: 0;
     transition: all 0.25s ease; 
 }
 
-button:hover {
+button:hover,#btn-form:hover{
     background-color: #003366; 
 }
-
-
 
 .captcha {
     background-color:#0063CE;
@@ -181,28 +171,22 @@ button:hover {
     margin: 10px auto 0 auto; 
 }
 
-
-
 .imagen-captcha {
     width: 52px;
     height: 40px;
     margin-left: 30px;
 }
 
-
 .formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .label-de-input{
     text-align: left;
     width: 62%;    
 }
-
-
 
 .texto-captcha {
     font-weight: lighter;
@@ -238,6 +222,11 @@ button:hover {
 .imagen-facebook, .imagen-google {
     width: 40px;
     height: 40px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+}
+
+.imagen-facebook{
+    border-radius: 50%;
 }
 
 .imagen-google{
@@ -287,9 +276,6 @@ button:hover {
     100% { transform: rotate(360deg); }
 }
 
-
-
-
 .comprobacion-formulario {
     width: 63px;
     height: 29px;
@@ -307,7 +293,6 @@ button:hover {
 
 
 }
-
 
 .circulo-derecha , .circulo-izquierda {
     transition: opacity 0.8s ease-in-out, background-color 0.8s ease-in-out; /* Transición de 0.8 segundos */
@@ -328,7 +313,6 @@ button:hover {
 
 }
 
-
 .alerta {
     position: absolute; /* Esto hace que el párrafo no ocupe espacio en el flujo normal */
     text-align: center;
@@ -345,7 +329,6 @@ button:hover {
 
 }
 
-
 .alerta-envio{
     font-size: 12px;
     border-radius: 50px;
@@ -361,10 +344,6 @@ button:hover {
     z-index: 3;
     overflow: visible;
 }
-
-
-
-
 
 .borde-izquierda {
     border-top-left-radius: 10px;

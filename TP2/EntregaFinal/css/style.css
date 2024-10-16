@@ -18,13 +18,11 @@
   --color-juego-boton-jugar:rgb(255, 172, 89);
 }
 
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }*
-
-
+}
 
 body {
   width: 100%;
@@ -188,9 +186,9 @@ display: none;
   align-items: center;
 }
 .cabecera-der-btn-carrito{
-  height: 42px;
-  width: 42px;
   display: flex;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
   background-color: var(--color-header-carrito);
   justify-content: center;
@@ -204,8 +202,8 @@ display: none;
   width: auto;
 }
 .cabecera-der-btn-usuario{
-  height: 42px;
-  width: 42px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
   background-color:var(--color-header-usuario);
   display: flex;
@@ -800,7 +798,7 @@ span.texto-inferior{
     margin-left: 15px;
     transition: 0.5s;
   }
-  .menu-desplegable-item a span:hover{
+  .menu-desplegable-item:hover a span{
     transform: translateX(10px);
   }
   .menu-desplegable-barradebusqueda{
