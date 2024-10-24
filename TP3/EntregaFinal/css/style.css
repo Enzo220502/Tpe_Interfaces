@@ -135,9 +135,7 @@ input:focus{
       width: 100%;
   }
 }
-.ocultar{
-display: none;
-}
+
 
 /* ---------------- CABECERA  ---------------- */
 
@@ -901,4 +899,7 @@ span.texto-inferior{
     font-weight: lighter;
     white-space: nowrap;
   }
+}
+.ocultar{
+  display: none;
 }

@@ -70,21 +70,25 @@ ul.breadcrumb img{
   width: 920px;
 }
 .juego-box{
-  background-image: url('../img/game/fondo-juego.png');
-  background-size: cover;
   height: 530px;
+}
+.juego-cerrado{
+  background-image: url('../img/game/fondo-juego-cerrado.png');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; 
   color: white;
 }
-.juego-box img{
+.juego-cerrado img{
   border-radius: 10px;
   height: 110px;
   width: auto;
 }
-.juego-box h3{
+.juego-cerrado h3{
   margin: 15px 0px;
   width: auto;
 }
@@ -113,6 +117,13 @@ ul.breadcrumb img{
 }
 .boton-jugar h2{
   padding-bottom: 3px;
+}
+.juego-ejecutandose{
+  background-image: url('../img/game/fondo-juego-ejecutandose.png');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  color: white;
 }
 .juego-barra{
   display: flex;
