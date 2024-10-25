@@ -92,7 +92,7 @@ ul.breadcrumb img{
   margin: 15px 0px;
   width: auto;
 }
-.boton-jugar{
+.juego-btn-jugar{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,18 +104,18 @@ ul.breadcrumb img{
   cursor: pointer;
   color: var(--color-negro);
 }
-.boton-jugar:hover{
+.juego-btn-jugar:hover{
   background-color:var(--color-negro);
   color:var(--color-secundario);
   border: 2px solid var(--color-secundario);
 }
-.boton-jugar img{
+.juego-btn-jugar img{
   margin-left: 5px;
   height: auto;
   width: 30px;
   border-radius: 0;
 }
-.boton-jugar h2{
+.juego-btn-jugar h2{
   padding-bottom: 3px;
 }
 .juego-ejecutandose{
@@ -369,4 +369,79 @@ ul.breadcrumb img{
   font-family: 'Rowdies';
   font-weight: bolder;
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-cruz-juego{
+  position: absolute;
+}
+
+.juego-menu{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../img/game/fondo-juego-ejecutandose.png');
+  background-size: cover;
+}
+
+.datos-jugadores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.datos-jugador-1, .datos-jugador-2 {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.datos-jugadores label {
+  margin-bottom: 5px;
+}
+
+.datos-jugadores input[type="text"], .datos-jugadores input[type="file"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.seleccion-tamaño-linea {
+  text-align: center;
+}
+
+.fichas-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ficha {
+  width: 80px; /* Ajusta el tamaño según sea necesario */
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.ficha:hover {
+  opacity: 1;
+}
+
+/* Efecto hover para iluminar fichas hasta el hover */
+.ficha:hover,
+.ficha:hover ~ .ficha {
+  opacity: 1; /* Hace que todas las fichas a la izquierda se iluminen */
+}
+
+.juego-btn-comenzar {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
