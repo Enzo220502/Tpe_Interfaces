@@ -72,18 +72,20 @@ main{
 }
 
 .form{
-    position: relative;
-    display: flex;
-    border-radius: 10px;
-    width: 800px;
-    height: 600px;
-    background-color: #2E92FF;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
-    z-index: 2;
-    overflow:visible;
-    top: 139px;
-    
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  width: 800px;
+  height: 600px;
+  background-color: #2E92FF;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+  z-index: 2;
+  overflow:visible;
+  top: 139px;
+  
 }
+
+
 
 .form-content{
     display: flex;
@@ -98,6 +100,29 @@ main{
     position: relative;
     z-index: 5;
 
+}
+.popup-confirmacion {
+  display: none; /* Usar flexbox para centrar contenido */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  background-color: #2E92FF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border: #002F62 solid 5px;
+  width: 400px;
+  position: fixed; /* Permitir que se mantenga en la ventana */
+  top: 50%; /* Alinear al centro de la ventana */
+  left: 50%; /* Alinear al centro de la ventana */
+  transform: translate(-50%, -50%); /* Centrar completamente */
+  box-sizing: border-box; /* Incluir padding y border en el tamaño total */
+  color: white;
+}
+
+.popup-contenido {
+  max-width: 400px;
+  width: 80%;
 }
 
 .imagen-form ,  .imagen-desvanecimiento-inicio , .imagen-desvanecimiento-registro{
@@ -156,11 +181,11 @@ label {
 
 
 button,#btn-form {
-    width: 216px;
-    height: 47px;
+    width: 180px;
+    height: 40px;
     background-color: #00458F;
     color: #F7F7F7;
-    font-size: 22px;
+    font-size: 18px;
     font-family: 'Rowdies';
     border: 2px solid #F7F7F7;
     border-radius: 30px;
@@ -210,7 +235,8 @@ button:hover,#btn-form:hover{
     justify-content: flex-start;
     border-radius: 5px;
     width: 230px    ; /* Ajusta el captcha al ancho completo del formulario */
-    margin: 10px auto 0 auto; 
+    margin: 20px auto 0 auto; 
+
 }
 
 .imagen-captcha {
@@ -358,15 +384,15 @@ button:hover,#btn-form:hover{
 .alerta {
     position: absolute; /* Esto hace que el párrafo no ocupe espacio en el flujo normal */
     text-align: center;
-    color: #db5555  ;
-    font-size: 1rem;
+    color: #e8aa37  ;
+    font-size: 0.7rem;
     visibility:visible;
     border-radius: 5px;    
     z-index: 100;   
     white-space: nowrap;
-    left: 210px;
+    left: 50px;
     -webkit-text-stroke: #0000 0.7px;
-    top: 8px;
+    top: -5px;
     font-weight: lighter;
 
 }

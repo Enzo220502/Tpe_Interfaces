@@ -1,3 +1,5 @@
+
+
 document.querySelector('.imagen-form').classList.add('borde-derecha');
 
 document.getElementById('goToRegister').addEventListener('click', () => {
@@ -129,6 +131,10 @@ window.onload = function () {
 
 
 // validacion del registro 
+const popup = document.getElementById('popup-confirmacion');
+const formGeneral = document.getElementById('formulario-completo');
+
+
 document.getElementById('btn-registrar').addEventListener('click', () => {
     // Obtener los valores de los campos de entrada
     const nombre = document.getElementById("nombre");
@@ -148,7 +154,6 @@ document.getElementById('btn-registrar').addEventListener('click', () => {
     const alertaPassword = document.getElementById("alerta-password");
     const alertaConfirmarPassword = document.getElementById("alerta-confirmar-password");
     const alertaCaptchaRegistro = document.getElementById("alerta-captcha-registro");
-    const parrafoGeneral = document.getElementById("alerta"); // El párrafo donde se mostrarán las alertas
 
     let entrar = false;
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -161,58 +166,75 @@ document.getElementById('btn-registrar').addEventListener('click', () => {
     alertaPassword.innerHTML = "";
     alertaConfirmarPassword.innerHTML = "";
     alertaCaptchaRegistro.innerHTML = "";
-    parrafoGeneral.innerHTML = "";
 
     if (nombre.value.length <1  ) {
-        alertaNombre.innerHTML = " *COMPLETAR NOMBRE ";
+        alertaNombre.innerHTML = " *Completar nombre ";
         entrar = true;
     }
 
     if (apellido.value.length <1) {
-        alertaApellido.innerHTML = " *COMPLETAR APELLIDO ";
+        alertaApellido.innerHTML = " *Completar apellido ";
         entrar = true;
     }
 
     if (isNaN(edad.value) || edad.value <= 0) {
-        alertaEdad.innerHTML = " *EDAD INVALIDA ";
+        alertaEdad.innerHTML = " *Edad invalida ";
         entrar = true;
     }
 
     if (!regexEmail.test(email.value)) {
-        alertaEmail.innerHTML = " *EMAIL INVALIDO ";
+        alertaEmail.innerHTML = " *Email invalido ";
         entrar = true;
     }
 
     if (password.value.length < 8) {
-        alertaPassword.innerHTML = " *LA CONTRASEÑA ES CORTA ";
+        alertaPassword.innerHTML = " *La contraseña es corta ";
         entrar = true;
     }
 
     if (password.value !== confirmarPassword.value) {
-        alertaConfirmarPassword.innerHTML = " *LAS CONTRASEÑAS NO COINCIDEN ";
+        alertaConfirmarPassword.innerHTML = " *Contraseña no coinciden  ";
         entrar = true;
     }
 
     // Verificar si el captcha está chequeado
     if (!checkboxCaptchaRegistro.checked) {
-        alertaCaptchaRegistro.innerHTML = " *DEBES VALIDAR EL CAPTCHA    ";
+        alertaCaptchaRegistro.innerHTML = " *Debes validar el captcha    ";
         entrar = true;
     }
 
     if (entrar) {
-        parrafoGeneral.style.display = "block";
+
     } else {
         // Limpiar campos si no hay errores
         nombre.value = "";
         apellido.value = "";
-        nickname.value ="";
+        nickname.value = "";
         edad.value = "";
         email.value = "";
         password.value = "";
         confirmarPassword.value = "";
         checkboxCaptchaRegistro.checked = false; // Restablecer el estado del checkbox
+        
+        // Aquí puedes agregar la lógica para enviar el formulario o cualquier otra acción que necesites realizar.
+        // Ejemplo: enviar el formulario a un servidor
 
-        parrafoGeneral.innerHTML = "FORMULARIO ENVIADO !";
+        popup.style.display = 'flex';
+        formGeneral.style.display = 'none'; // Ocultar formulario
+        setTimeout(() => {
+            popup.style.display = 'none';
+            formGeneral.style.display = 'flex'; // Volver a mostrar formulario después de 5 segundos
+        }, 5000);
+    }
+});
+
+
+
+// Cerrar popup al hacer clic fuera del popup
+window.addEventListener('click', (event) => {
+    if (event.target === popup) {
+        popup.style.display = 'none';
+        formGeneral.style.display = 'flex';
     }
 });
 

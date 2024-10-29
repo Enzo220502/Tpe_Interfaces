@@ -26,7 +26,7 @@
             </div>
         </header>
         <main>
-        <div class="form">
+        <div class="form" id="formulario-completo">
             <div class="form-content">
                 <div class="form-login">
                     <img src="img/form/image.png" alt="fondo-login-desvanecimiento" class="imagen-desvanecimiento-inicio ">
@@ -152,9 +152,6 @@
 
                             <button type="button" id="btn-registrar">REGISTRAR</button>
 
-                            <div class="info-container">
-                                <p class="alerta-envio" id="alerta"> </p>
-                                </div>
 
                             <div class="social-icons">
                                 <img src="img/form/facebook.png" alt="imagen-facebook" class="imagen-facebook">
@@ -162,7 +159,11 @@
                             </div>
 
                             <h2> ¿Ya tienes cuenta? <span class="iniciar-sesion" id="goToLogin">INICIAR SESION</span> </h2>
+
+
                     </form>
+
+                    
 
                     <div class="comprobacion-formulario">
                         <div class="circulo-izquierda" id="circulo-izquierda"></div>
@@ -172,7 +173,15 @@
                 </div>
             </div>
         </div>
+
+
         </main>
+
+        <div id="popup-confirmacion" class="popup-confirmacion oculto">
+            <div class="popup-contenido">
+                <p>¡Formulario enviado correctamente!</p>
+            </div>
+        </div>
         
         <footer class="footer">  
             <div class="footer-superior">
