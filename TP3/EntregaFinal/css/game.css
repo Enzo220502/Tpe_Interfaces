@@ -8,7 +8,8 @@
   --color-negro: rgb(37, 36, 33);
   --color-blanco: rgb(247, 247, 247);
 }
-/* ---------------- CONTENIDO ---------------- */
+/* -----------------------  */
+/* ---------------- CONTENIDO ----------------  */
 .fondo{
   width: 100%;
   background-color: var(--color-azul-3);
