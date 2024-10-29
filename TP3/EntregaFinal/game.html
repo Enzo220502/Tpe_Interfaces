@@ -296,32 +296,58 @@
                         <div class="juego-menu ocultar" id="juego-menu">
                             <div class="datos-jugadores">
                                 <div class="datos-jugador-1">
-                                    <label for="nombre-jugador-1">Nombre del Jugador 1:</label>
+                                    <label for="nombre-jugador-1">Nombre del Jugador 1</label>
                                     <input type="text" id="nombre-jugador-1" name="nombre-jugador-1" required>
+                                
                                     <label for="ficha-jugador-1">Seleccionar ficha:</label>
-                                    <input type="file" id="ficha-jugador-1" name="ficha-jugador-1" accept="image/*">
+                                    <div class="ficha-selector" id="ficha-selector-1" tabindex="0">
+                                        <img src="img/cards/a-empaquetar.png" id="ficha-imagen-1" alt="Ficha seleccionada">
+                                    </div>
                                 </div>
-                            
+                                <!-- Popup para seleccionar fichas -->
+                                <div id="ficha-popup-1" class="ficha-popup ocultar">
+                                    <h3>Fichas</h3>
+                                    <div class="fichas-lista">
+                                        <img src="img/cards/aventura-en-el-templo.png" alt="Ficha 1" class="fichas-1" data-ficha="ficha1.png">
+                                        <img src="img/cards/aventuras-isleñas.png" alt="Ficha 2" class="fichas-1" data-ficha="ficha2.png">
+                                        <img src="img/cards/batalla-de-agua.png" alt="Ficha 3" class="fichas-1" data-ficha="ficha3.png">
+                                        <!-- Puedes añadir más fichas aquí -->
+                                    </div>
+                                </div>
+
                                 <div class="datos-jugador-2">
-                                    <label for="nombre-jugador-2">Nombre del Jugador 2:</label>
+                                    <label for="nombre-jugador-2">Nombre del Jugador 2</label>
                                     <input type="text" id="nombre-jugador-2" name="nombre-jugador-2" required>
+                                
                                     <label for="ficha-jugador-2">Seleccionar ficha:</label>
-                                    <input type="file" id="ficha-jugador-2" name="ficha-jugador-2" accept="image/*">
+                                    <div class="ficha-selector" id="ficha-selector-2" tabindex="0">
+                                        <img src="img/cards/a-empaquetar.png" id="ficha-imagen-2" alt="Ficha seleccionada">
+                                    </div>
+                                </div>
+                                <!-- Popup para seleccionar fichas -->
+                                <div id="ficha-popup-2" class="ficha-popup ocultar">
+                                    <h3>Seleccionar Ficha</h3>
+                                    <div class="fichas-lista">
+                                        <img src="img/cards/aventura-en-el-templo.png" alt="Ficha 1" class="fichas-2" data-ficha="ficha1.png">
+                                        <img src="img/cards/aventuras-isleñas.png" alt="Ficha 2" class="fichas-2" data-ficha="ficha2.png">
+                                        <img src="img/cards/batalla-de-agua.png" alt="Ficha 3" class="fichas-2" data-ficha="ficha3.png">
+                                        <!-- Puedes añadir más fichas aquí -->
+                                    </div>
                                 </div>
                             </div>
                             <div class="seleccion-tamaño-linea">
-                                <h3>Selecciona Tamaño de Ficha:</h3>
+                                <h3>Tamaño de Linea:</h3>
                                 <div class="fichas-container">
-                                    <img src="ficha.png" class="ficha" alt="Ficha 1">
-                                    <img src="ficha.png" class="ficha" alt="Ficha 2">
-                                    <img src="ficha.png" class="ficha" alt="Ficha 3">
-                                    <img src="ficha.png" class="ficha" alt="Ficha 4">
-                                    <img src="ficha.png" class="ficha" alt="Ficha 5">
-                                    <img src="ficha.png" class="ficha" alt="Ficha 6">
-                                    <img src="ficha.png" class="ficha" alt="Ficha 7">
+                                    <img src="img/cards/4-in-a-row.png" class="ficha" alt="Ficha 1">
+                                    <img src="img/cards/4-in-a-row.png" class="ficha" alt="Ficha 2">
+                                    <img src="img/cards/4-in-a-row.png" class="ficha" alt="Ficha 3">
+                                    <img src="img/cards/4-in-a-row.png" class="ficha" alt="Ficha 4">
+                                    <img src="img/cards/4-in-a-row.png" class="ficha" alt="Ficha 5">
+                                    <img src="img/cards/4-in-a-row.png" class="ficha" alt="Ficha 6">
+                                    <img src="img/cards/4-in-a-row.png" class="ficha" alt="Ficha 7">
                                 </div>
                             </div>
-                            <button class="juego-btn-comenzar" id="juego-btn-comenzar" type="submit">Comenzar</button>
+                            <button class="juego-btn-comenzar" id="juego-btn-comenzar" type="submit">Comenzar!</button>
                             <div class="escape ocultar">
                                 <p>Presiona <span>Esc</span> para salir de la pantalla completa</p>
                             </div>
