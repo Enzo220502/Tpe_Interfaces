@@ -216,8 +216,7 @@ document.getElementById('btn-registrar').addEventListener('click', () => {
         confirmarPassword.value = "";
         checkboxCaptchaRegistro.checked = false; // Restablecer el estado del checkbox
         
-        // Aquí puedes agregar la lógica para enviar el formulario o cualquier otra acción que necesites realizar.
-        // Ejemplo: enviar el formulario a un servidor
+
 
         popup.style.display = 'flex';
         formGeneral.style.display = 'none'; // Ocultar formulario
