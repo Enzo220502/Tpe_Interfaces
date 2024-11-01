@@ -372,77 +372,158 @@ ul.breadcrumb img{
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.btn-cruz-juego{
-  position: absolute;
-}
-
 .juego-menu{
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 50px 50px;
   background-image: url('../img/game/fondo-juego-ejecutandose.png');
   background-size: cover;
+  align-items: center;
+}
+.btn-cruz-juego{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 5px;
+  background-color: var(--color-blanco);
+  border: none;
+  border-radius: 5px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.btn-cruz-juego:hover{
+  opacity: 1;
 }
 
 .datos-jugadores {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border-radius: 10px;
 }
 
 .datos-jugador-1, .datos-jugador-2 {
   width: 45%;
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  align-items: center;
 }
 
 .datos-jugadores label {
   margin-bottom: 5px;
+  color: var(--color-blanco);
 }
 
-.datos-jugadores input[type="text"], .datos-jugadores input[type="file"] {
+.datos-jugadores input[type="text"]{
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 3px solid #9b159b;
+  border-radius: 10px;
+  font-family: "Rowdies";
 }
 
 .seleccion-tamaño-linea {
   text-align: center;
+  color: var(--color-blanco);
+  margin: 20px 0px;
 }
 
 .fichas-container {
+  margin: 20px 0px;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .ficha {
-  width: 80px; /* Ajusta el tamaño según sea necesario */
+  width: 80px;
+  height: 80px; /* Ajusta el tamaño según sea necesario */
   opacity: 0.5;
   transition: opacity 0.3s;
+  cursor: pointer;
 }
 
-.ficha:hover {
+.ficha-hover {
   opacity: 1;
 }
-
-/* Efecto hover para iluminar fichas hasta el hover */
-.ficha:hover,
-.ficha:hover ~ .ficha {
-  opacity: 1; /* Hace que todas las fichas a la izquierda se iluminen */
+.ficha-active {
+  opacity: 1;
 }
 
 .juego-btn-comenzar {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #5a154f;
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
+  width: 150px;
+  transition: 0.5s;
+  font-size: 18px;
+  font-family: "Rowdies";
 }
+.juego-btn-comenzar:hover {
+  background-color: #9b159b;
+  width: 160px;
+}
+
+
+
+
+.ficha-selector {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.ficha-selector img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.ficha-popup {
+  display: flex; /* Oculto por defecto */
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #9b159b;
+  padding: 20px;
+  z-index: 1;
+  align-items: center;
+  border-radius: 10px;
+}
+.ficha-popup h3{
+  align-self: center;
+  padding-bottom: 20px;
+}
+
+.fichas-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacio entre imágenes */
+}
+
+.fichas-lista .fichas-1, .fichas-lista .fichas-2{
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+#cerrar-popup-1 {
+  margin-top: 10px;
+}
+#cerrar-popup-2 {
+  margin-top: 10px;
+}
+
