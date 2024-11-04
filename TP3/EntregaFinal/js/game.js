@@ -392,7 +392,7 @@ function toggleShareOptions() {
 
 
 document.getElementById("pantalla-completa-btn").addEventListener("click", function () {
-  const juego = document.getElementById("juego");
+  const juego = document.getElementById("canvas-4-in-line");
   
   if (juego.requestFullscreen) {
     juego.requestFullscreen();
