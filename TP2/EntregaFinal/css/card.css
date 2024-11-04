@@ -104,13 +104,16 @@
 
 .contenedor-cards{
   position: relative;
-  display:grid;
   grid-auto-rows: 210px;
   grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
   gap:10px;
   max-width: 1300px;
   height: auto;
   margin-bottom: 50px;
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 /* CARD */
