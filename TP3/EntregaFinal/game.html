@@ -291,7 +291,7 @@
                     <img src="img/game/publi-izq.png" alt="">
                 </div>
                 <div class="juego">
-                    <div class="juego-box">
+                    <div class="juego-box" id="juego">
                         <!-- MENU -->
                         <div class="juego-menu ocultar" id="juego-menu">
                             <div class="datos-jugadores">
@@ -495,9 +495,24 @@
                             <h3>4 in a Row Hora de Aventura</h3>
                         </div>
                         <div class="juego-barra-cont-der">
-                            <img src="img/game/compartir.png" alt="">
+
+                            <div class="compartir-contenedor"> 
+                                <img src="img/game/compartir.png" alt="Compartir" onclick="toggleShareOptions()">
+                                <div class="contenedor-logos-compartir" id="contenedor-opciones-compartir">
+                                    <div class="opciones-compartir"> 
+                                        <img src="img/form/facebook.png" alt="imagen-facebook" class="imagen-facebook">
+                                        <img src="img/form/google.png" alt="imagen-google" class="imagen-google">
+                                        <img src="img/game/mensaje.png" alt="imagen-mensaje" class="imagen-mensaje">
+                                        <img src="img/game/email.png" alt="imagen-email" class="imagen-email">
+    
+    
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
                             <img src="img/game/controles.png" alt="">
-                            <img src="img/game/pantalla-completa.png" alt="">
+                            <img src="img/game/pantalla-completa.png" alt="pantalla completa" id="pantalla-completa-btn" >
                         </div>
                     </div>
                 </div>

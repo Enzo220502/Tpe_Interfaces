@@ -21,6 +21,8 @@ boton_comenzar.onclick = function(){
   juego_ejecutandose.classList.remove("ocultar");
 }
 
+
+
 document.querySelectorAll('.ficha').forEach((ficha, index) => {
   ficha.addEventListener('mouseover', () => {
     for (let i = 0; i <= index; i++) {
@@ -78,4 +80,24 @@ document.getElementById('ficha-selector-2').addEventListener('click', () => {
   document.getElementById('ficha-popup-2').classList.remove('ocultar');
 });
 
+});
+
+
+function toggleShareOptions() {
+  const shareOptions = document.getElementById("contenedor-opciones-compartir");
+  shareOptions.classList.toggle("mostrar-compartir");
+}
+
+
+
+document.getElementById("pantalla-completa-btn").addEventListener("click", function () {
+  const juego = document.getElementById("juego");
+  
+  if (juego.requestFullscreen) {
+    juego.requestFullscreen();
+  } else if (juego.webkitRequestFullscreen) { // Para Safari
+    juego.webkitRequestFullscreen();
+  } else if (juego.msRequestFullscreen) { // Para IE/Edge
+    juego.msRequestFullscreen();
+  }
 });
