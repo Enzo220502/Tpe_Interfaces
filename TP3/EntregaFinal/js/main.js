@@ -235,21 +235,24 @@ function gestionarFichas() {
         canvas.addEventListener('mousedown' , function(e) { game.onMouseDown(e);  }, false);
         canvas.addEventListener('mousemove' , function(e) { game.onMouseMove(e);  }, false);
         canvas.addEventListener('mouseup'   , function(e) { game.onMouseUp(e);    }, false);
-        canvas.addEventListener('mouseleave', function(e) { game.onMouseLeave(e); },false);
+        canvas.addEventListener('mouseleave', function(e) { game.onMouseLeave(e); }, false);
+        canvas.addEventListener('click'     , function(e) { game.onClick(e);      }, false);
 
         
         btn_exit_open_init.addEventListener("click", function(e) {
-            game.endGame();
-            game = null;
-            btn_exit_open_init.classList.add("ocultar");
-            btn_reset_game.classList.add("ocultar");
-            juego_menu.classList.remove("ocultar");
-            juego_ejecutandose.classList.add("ocultar");
-            nombrej1 = "";
-            nombrej2 = "";
-            fichaSeleccionadaJ1 = "";
-            fichaSeleccionadaJ2 = "";
-            tamanoLinea = "4";
+            if(game != null){
+              game.endGame();
+              game = null;
+              btn_exit_open_init.classList.add("ocultar");
+              btn_reset_game.classList.add("ocultar");
+              juego_menu.classList.remove("ocultar");
+              juego_ejecutandose.classList.add("ocultar");
+              nombrej1 = "";
+              nombrej2 = "";
+              fichaSeleccionadaJ1 = "";
+              fichaSeleccionadaJ2 = "";
+              tamanoLinea = "4";
+            }
         });
 
         btn_reset_game.addEventListener("click", function(e) {

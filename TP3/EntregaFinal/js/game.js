@@ -50,6 +50,18 @@ class Game{
         this.timePosX = this.canvasWidth / 2;
         this.timePosY = (this.canvasHeight - this.board.getHeight()) / 4;
         
+        // Posicion del texto de reiniciar
+        this.restartPosX = this.canvasWidth / 8;
+        this.restartPosY = (this.canvasHeight - this.board.getHeight()) / 4;
+
+        // Posicion del texto de salir
+        this.exitPosX = this.canvasWidth / 1.15;
+        this.exitPosY = (this.canvasHeight - this.board.getHeight()) / 4;
+
+        // Posicion del texto de pausar
+        this.pausePosX = this.canvasWidth / 1.15;
+        this.pausePosY = (this.canvasHeight - this.board.getHeight()) / 2;
+        
         // Setear turno
         this.teamTurn = Math.floor(Math.random() * 2) + 1; // Devuelve aleatoriamente 1 o 2
         
@@ -60,16 +72,37 @@ class Game{
         
         this.startTimer();
         this.drawFrame();
+
+        
     }
 
     //<-------------------- FUNCIONES DE EVENTOS DE USUARIO --------------------> 
 
     onMouseDown(e) {
+        let restartWidth = 40;
+        let restartHeight = 20; // Altura del texto (igual al tamaño de fuente)
+        let exitWidth = 25;
+        let exitHeight = 20; // Altura del texto (igual al tamaño de fuente)
+        let pauseWidth = 30;
+        let pauseHeight = 20; // Altura del texto (igual al tamaño de fuente)
+
+        
         this.isMouseDown = true;
-        let pos = this.getMousePos(e);
-        if ((this.teamTurn === this.playerZone1.getTeam()) && (this.playerZone1.isChipClicked(pos.x, pos.y))){
+        let mousePos = this.getMousePos(e);
+        if (mousePos.x >= (this.restartPosX - restartWidth) && mousePos.x <= this.restartPosX + restartWidth &&
+            mousePos.y >= this.restartPosY - restartHeight && mousePos.y <= this.restartPosY) {
+            this.reset();
+        } else if (mousePos.x >= (this.exitPosX - exitWidth) && mousePos.x <= this.exitPosX + exitWidth &&
+            mousePos.y >= this.exitPosY - exitHeight && mousePos.y <= this.exitPosY) {
+            this.exit();
+        } else if (mousePos.x >= (this.pausePosX - pauseWidth) && mousePos.x <= this.pausePosX + pauseWidth &&
+        mousePos.y >= this.pausePosY - pauseHeight && mousePos.y <= this.pausePosY) {
+            this.pause();
+        } else if ((this.teamTurn === this.playerZone1.getTeam()) && 
+            (this.playerZone1.isChipClicked(mousePos.x, mousePos.y))) {
             this.activeChip = this.playerZone1.getChip();
-        } else if ((this.teamTurn === this.playerZone2.getTeam()) && (this.playerZone2.isChipClicked(pos.x, pos.y))) {
+        } else if ((this.teamTurn === this.playerZone2.getTeam()) && 
+           (this.playerZone2.isChipClicked(mousePos.x, mousePos.y))) {
             this.activeChip = this.playerZone2.getChip();
         }
     }
@@ -190,7 +223,7 @@ class Game{
 
         this.drawTimer();
         this.drawArrows();
-        
+
         requestAnimationFrame(this.drawFrame);
     }
 
@@ -268,6 +301,20 @@ class Game{
         // Reinicia el timer
         this.startTimer();
 
+    }
+
+    pause() {
+        //
+        //this.drawText("PAUSA", this.textTurnPosX, this.textTurnPosY);
+    }
+
+    exit(){
+        const juego_ejecutandose = document.getElementById("juego-ejecutandose");
+        const juego_menu = document.getElementById("juego-menu");
+        juego_ejecutandose.classList.add("ocultar");
+        juego_menu.classList.remove("ocultar");
+        document.getElementById("nombre-jugador-1").value = '';
+        document.getElementById("nombre-jugador-2").value = '';
     }
 
     startTimer() {
