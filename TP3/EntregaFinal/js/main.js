@@ -26,17 +26,25 @@ boton_jugar.onclick = function(){
   juego_menu.classList.remove("ocultar");
 }
 boton_comenzar.onclick = function(){
-  nombrej1 = document.getElementById("nombre-jugador-1").value;
-  nombrej2 = document.getElementById("nombre-jugador-2").value;
-  fichaSeleccionadaJ1 = seleccionJ1.getAttribute('src');
-  fichaSeleccionadaJ2 = seleccionJ2.getAttribute('src');
-  console.log(nombrej1);
-  console.log(nombrej2);
-  console.log(fichaSeleccionadaJ1);
-  console.log(fichaSeleccionadaJ2);
-  juego_menu.classList.add("ocultar");
-  juego_ejecutandose.classList.remove("ocultar");
-  jugar();
+  const input1 = document.getElementById("nombre-jugador-1");
+  const input2 = document.getElementById("nombre-jugador-2");
+  let nombresIngresados = true;
+  if (input1.value === '' || input2.value === '') {
+    alert('Hace falta completar los nombres.');
+    nombresIngresados = false;
+  } else{
+    nombrej1 = document.getElementById("nombre-jugador-1").value;
+    nombrej2 = document.getElementById("nombre-jugador-2").value;
+    fichaSeleccionadaJ1 = seleccionJ1.getAttribute('src');
+    fichaSeleccionadaJ2 = seleccionJ2.getAttribute('src');
+    console.log(nombrej1);
+    console.log(nombrej2);
+    console.log(fichaSeleccionadaJ1);
+    console.log(fichaSeleccionadaJ2);
+    juego_menu.classList.add("ocultar");
+    juego_ejecutandose.classList.remove("ocultar");
+    jugar();
+  }
 }
 
 document.querySelectorAll('.ficha').forEach((ficha, index) => {
