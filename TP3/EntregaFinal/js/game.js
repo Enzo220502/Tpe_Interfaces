@@ -50,6 +50,10 @@ class Game{
         this.timePosX = this.canvasWidth / 2;
         this.timePosY = (this.canvasHeight - this.board.getHeight()) / 4;
         
+        // Posicion del texto de reiniciar
+        this.restartPosX = this.canvasWidth / 8;
+        this.restartPosY = (this.canvasHeight - this.board.getHeight()) / 4;
+        
         // Setear turno
         this.teamTurn = Math.floor(Math.random() * 2) + 1; // Devuelve aleatoriamente 1 o 2
         
@@ -60,6 +64,8 @@ class Game{
         
         this.startTimer();
         this.drawFrame();
+
+        
     }
 
     //<-------------------- FUNCIONES DE EVENTOS DE USUARIO --------------------> 
@@ -131,6 +137,20 @@ class Game{
             this.activeChip = null;
         }
     }
+    
+
+    onClick(e){
+        let mousePos = this.getMousePos(e);
+
+        // Calcula el ancho del texto para determinar el área clickeable
+        let restartWidth = 60;
+        let restartHeight = 20; // Altura del texto (igual al tamaño de fuente)
+
+        if (mousePos.x >= this.restartPosX && mousePos.x <= this.restartPosX + restartWidth &&
+            mousePos.y >= this.restartPosY - restartHeight && mousePos.y <= this.restartPosY) {
+            this.reset(); // Llama a la función de reinicio
+        }
+    }
 
     //<-------------------- FIN DE FUNCIONES DE EVENTOS DE USUARIO --------------------> 
 
@@ -190,6 +210,7 @@ class Game{
 
         this.drawTimer();
         this.drawArrows();
+        this.drawRestart();
         
         requestAnimationFrame(this.drawFrame);
     }
@@ -203,6 +224,12 @@ class Game{
         this.ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
         let text = 'Tiempo: ' + this.secondsLeft + ' segundos';
         this.drawText(text, this.timePosX, this.timePosY, font, 4);
+    }
+
+    drawRestart() {
+        let font = '20px Rowdies';
+        let text = 'Reiniciar';
+        this.drawText(text, this.restartPosX, this.restartPosY, font, 4);
     }
 
     drawText(text, x, y, font, strokeWidth) {

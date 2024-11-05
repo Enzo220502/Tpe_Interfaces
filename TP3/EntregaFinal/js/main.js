@@ -157,55 +157,6 @@ function gestionarFichas() {
       });
     }
 
-<-------------- Esta era la logica del boton para que se bloquee la opcion cuando elegis la ficha, si ya lo hiciste borrala --------------->
-   
-    for (var i = 0; i < btnsChipsP1.length; i++) {
-        btnsChipsP1[i].addEventListener("click", function() {
-        if (!this.classList.contains('blocked')) {
-          chipP1Input.value = this.getAttribute('value');
-
-          // Desmarcar todos los botones
-          for (var j = 0; j < btnsChipsP1.length; j++) {
-            btnsChipsP1[j].classList.remove("");
-          }
-          // Marcar el botón clickeado
-          this.classList.add("");
-
-          // Bloquear esa opcion en el otro jugador
-          for (var i = 0; i < btnsChipsP2.length; i++) {
-            btnsChipsP2[i].classList.remove('blocked');
-            if (btnsChipsP2[i].getAttribute('value') === this.getAttribute('value')) {
-              btnsChipsP2[i].classList.add('blocked');
-            }
-          }
-        }
-      });
-    }
-
-    for (var i = 0; i < btnsChipsP2.length; i++) {
-      btnsChipsP2[i].addEventListener("click", function() {
-        if (!this.classList.contains('blocked')) {
-          chipP2Input.value = this.getAttribute('value');
-
-          // Desmarcar todos los botones
-          for (var j = 0; j < btnsChipsP2.length; j++) {
-            btnsChipsP2[j].classList.remove("");
-          }
-          // Marcar el botón clickeado
-          this.classList.add("");
-
-          // Bloquear esa opcion en el otro jugador
-          for (var i = 0; i < btnsChipsP1.length; i++) {
-            btnsChipsP1[i].classList.remove('blocked');
-            if (btnsChipsP1[i].getAttribute('value') === this.getAttribute('value')) {
-              btnsChipsP1[i].classList.add('blocked');
-            }
-          }
-        }
-      });
-    }
-
-<---------------------- Fin de logica de los input para seleccionar la ficha ------------------------------>
 
 
     btn_to_play.addEventListener("click", function(e) {
@@ -323,7 +274,8 @@ function gestionarFichas() {
         canvas.addEventListener('mousedown' , function(e) { game.onMouseDown(e);  }, false);
         canvas.addEventListener('mousemove' , function(e) { game.onMouseMove(e);  }, false);
         canvas.addEventListener('mouseup'   , function(e) { game.onMouseUp(e);    }, false);
-        canvas.addEventListener('mouseleave', function(e) { game.onMouseLeave(e); },false);
+        canvas.addEventListener('mouseleave', function(e) { game.onMouseLeave(e); }, false);
+        canvas.addEventListener('click'     , function(e) { game.onClick(e);      }, false);
 
         /*
         let btn_menu = document.getElementById(""); // Aqui deberia ir el boton que solicita nuevamente los datos y fichas, función implementada

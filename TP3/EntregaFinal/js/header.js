@@ -1,4 +1,3 @@
-
 const menuHamburguesa = document.getElementById("menu-hamburguesa");
 const menuDesplegable = document.querySelector(".menu-desplegable");
 
