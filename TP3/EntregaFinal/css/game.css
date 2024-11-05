@@ -423,15 +423,22 @@ ul.breadcrumb img{
   align-items: center;
 }
 .btn-cruz-juego{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  width: 28px;
+  height: 28px;
   position: absolute;
   right: 0;
   top: 0;
   margin: 5px;
-  background-color: var(--color-blanco);
+  background-color: #5a154f;
   border: none;
   border-radius: 5px;
   opacity: 0.6;
   cursor: pointer;
+  transition: 0.4s ease;
 }
 .btn-cruz-juego:hover{
   opacity: 1;
@@ -559,23 +566,32 @@ ul.breadcrumb img{
 #cerrar-popup-2 {
   margin-top: 10px;
 }
-.btn-jugardenuevo{
-  position: absolute;
-  left: 0;
-  top: 0;
+#btn-reset, #btn-exit-open-init{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  width: 28px;
+  height: 28px;
   margin: 5px;
-  background-color: var(--color-blanco);
+  background-color: #5a154f;
   border: none;
   border-radius: 5px;
   opacity: 0.6;
   cursor: pointer;
   z-index: 10;
+  transition: 0.4s ease;
 }
+
 .btn-pausa{
-  position: absolute;
-  left: 30px;
-  top: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  width: 28px;
+  height: 28px;
   margin: 5px;
+  margin-left:40px;
   background-color: var(--color-blanco);
   border: none;
   border-radius: 5px;
@@ -583,3 +599,17 @@ ul.breadcrumb img{
   cursor: pointer;
   z-index: 10;
 }
+
+#btn-reset.ocultar, #btn-exit-open-init.ocultar{
+  display:none;
+}
+
+#btn-reset:hover,#btn-exit-open-init:hover{
+  opacity: 1;
+}
+
+#btn-exit-open-init{
+  margin-left: 40px;
+}
+
+

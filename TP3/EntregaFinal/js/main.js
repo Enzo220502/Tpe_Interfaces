@@ -2,13 +2,17 @@ document.addEventListener("DOMContentLoaded", function() {
   const boton_jugar = document.getElementById("juego-btn-jugar");
   const triangulo_play = document.getElementById("juego-btn-jugar-triangulo-play");
   const juego_cerrado = document.getElementById("juego-cerrado");
-  const juego_ejecutandose = document.getElementById("juego-ejecutandose");
+  const juego_ejecutandose = document.getElementById("canvas-4-in-line");
   const juego_menu = document.getElementById("juego-menu");
   const boton_comenzar = document.getElementById("juego-btn-comenzar");
   const fichas = document.querySelectorAll('.fichas');
   const popup = document.getElementById("ficha-popup");
   const seleccionJ1 = document.getElementById("ficha-seleccionada-1");
   const seleccionJ2 = document.getElementById("ficha-seleccionada-2");
+  const btn_exit_open_init = document.getElementById("btn-exit-open-init");
+  const btn_reset_game = document.getElementById("btn-reset");
+  const btn_close_form_init = document.getElementById("btn-exit-form");
+
   let nombrej1 = "";
   let nombrej2 = "";
   let fichaSeleccionadaJ1 = "";
@@ -30,14 +34,19 @@ boton_comenzar.onclick = function(){
   nombrej2 = document.getElementById("nombre-jugador-2").value;
   fichaSeleccionadaJ1 = seleccionJ1.getAttribute('src');
   fichaSeleccionadaJ2 = seleccionJ2.getAttribute('src');
-  console.log(nombrej1);
-  console.log(nombrej2);
-  console.log(fichaSeleccionadaJ1);
-  console.log(fichaSeleccionadaJ2);
-  juego_menu.classList.add("ocultar");
-  juego_ejecutandose.classList.remove("ocultar");
-  jugar();
+  if(nombrej1 != "" && nombrej2 != ""){
+    juego_menu.classList.add("ocultar");
+    juego_ejecutandose.classList.remove("ocultar");
+    btn_reset_game.classList.remove("ocultar");
+    btn_exit_open_init.classList.remove("ocultar");
+    jugar();
+  }
 }
+
+btn_close_form_init.onclick = function (){
+  juego_cerrado.classList.remove("ocultar");
+  juego_menu.classList.add("ocultar");
+};
 
 document.querySelectorAll('.ficha').forEach((ficha, index) => {
   
@@ -55,7 +64,6 @@ document.querySelectorAll('.ficha').forEach((ficha, index) => {
   });
   ficha.addEventListener('click', () => {
     tamanoLinea = ficha.getAttribute('data-value');
-    console.log(tamanoLinea);
     for (let i = 0; i < ficha.parentElement.children.length; i++) {
       ficha.parentElement.children[i].classList.remove('ficha-active'); // Elimina el efecto activo de todas
     }
@@ -113,17 +121,6 @@ function gestionarFichas() {
   });
 }
 
-
-    //var btnsChipsP1 = document.querySelectorAll("");  // Estas opciones serian las fichas que puede seleccionar el jugador 1
-    //var btnsChipsP2 = document.querySelectorAll("");  // Estas opciones serian las fichas que puede seleccionar el jugador 2
-    //var chipP1Input = document.getElementById("");    // Aqui iria el input de la ficha que selecciono el jugador 1
-    //var chipP2Input = document.getElementById("");    // Aqui iria el input de la ficha que selecciono el jugador 2
-    //var nameP1Input = document.getElementById("");    // Aqui iria el input del nombre de jugador 1
-    //var nameP2Input = document.getElementById("");    // Aqui iria el input del nombre de jugador 2
-
-    //var btns_menu = document.querySelectorAll(""); // Obtiene todos los botones del menu del juego
-
-    // Canvas
   function jugar(){
     let canvas = document.getElementById('canvas-4-in-line');
     let ctx = canvas.getContext('2d');
@@ -134,95 +131,12 @@ function gestionarFichas() {
     let form = document.getElementById("4-in-line-menu");
 
     
-    let nameP1Input = nombrej1; // Este es el dato harcodeado
-    let nameP2Input = nombrej2; // Este es el dato harcodeado
-    let colorChipP1 = "black";    // Este es el dato harcodeado
-    let colorChipP2 = "black";    // Este es el dato harcodeado
+    let nameP1Input = nombrej1;
+    let nameP2Input = nombrej2;
+    let colorChipP1 = "black";   
+    let colorChipP2 = "black";   
 
-    let inLine = tamanoLinea; // Aca deberia ir si es 4, 5, 6 ó 7 en linea, este es el dato harcodeado 
-
-    //let btn_to_play = document.getElementById(""); // Boton que le da play al juego
-
-    /*
-    for (var i = 0; i < btnsBoardSize.length; i++) {
-      btnsBoardSize[i].addEventListener("click", function() {
-        boardSizeInput.value = this.getAttribute('value');
-
-        // Desmarcar todos los botones
-        for (var j = 0; j < btnsBoardSize.length; j++) {
-          btnsBoardSize[j].classList.remove("");
-        }
-        // Marcar el botón clickeado
-        this.classList.add("");
-      });
-    }
-
-<-------------- Esta era la logica del boton para que se bloquee la opcion cuando elegis la ficha, si ya lo hiciste borrala --------------->
-   
-    for (var i = 0; i < btnsChipsP1.length; i++) {
-        btnsChipsP1[i].addEventListener("click", function() {
-        if (!this.classList.contains('blocked')) {
-          chipP1Input.value = this.getAttribute('value');
-
-          // Desmarcar todos los botones
-          for (var j = 0; j < btnsChipsP1.length; j++) {
-            btnsChipsP1[j].classList.remove("");
-          }
-          // Marcar el botón clickeado
-          this.classList.add("");
-
-          // Bloquear esa opcion en el otro jugador
-          for (var i = 0; i < btnsChipsP2.length; i++) {
-            btnsChipsP2[i].classList.remove('blocked');
-            if (btnsChipsP2[i].getAttribute('value') === this.getAttribute('value')) {
-              btnsChipsP2[i].classList.add('blocked');
-            }
-          }
-        }
-      });
-    }
-
-    for (var i = 0; i < btnsChipsP2.length; i++) {
-      btnsChipsP2[i].addEventListener("click", function() {
-        if (!this.classList.contains('blocked')) {
-          chipP2Input.value = this.getAttribute('value');
-
-          // Desmarcar todos los botones
-          for (var j = 0; j < btnsChipsP2.length; j++) {
-            btnsChipsP2[j].classList.remove("");
-          }
-          // Marcar el botón clickeado
-          this.classList.add("");
-
-          // Bloquear esa opcion en el otro jugador
-          for (var i = 0; i < btnsChipsP1.length; i++) {
-            btnsChipsP1[i].classList.remove('blocked');
-            if (btnsChipsP1[i].getAttribute('value') === this.getAttribute('value')) {
-              btnsChipsP1[i].classList.add('blocked');
-            }
-          }
-        }
-      });
-    }
-
-<---------------------- Fin de logica de los input para seleccionar la ficha ------------------------------>
-
-
-    btn_to_play.addEventListener("click", function(e) {
-      e.preventDefault();
-      if () { // Deberiamos corroborar que todos los datos que utilizaremos tengan un valor seteado, por ejemplo, los nombres no pueden ser vacíos.
-        
-        // Ocultamos el menu
-        menu.classList.add("hidden");
-        
-        // Visualizamos el canvas
-        canvas.classList.remove("hidden");
-        
-        // Visualizamos las opciones del juego
-        btns_menu.forEach(btn => {
-          btn.classList.remove("hidden");
-        });*/
-
+    let inLine = tamanoLinea; // Aca deberia ir si es 4, 5, 6 ó 7 en linea
 
         let chipP1Input = fichaSeleccionadaJ1;
         let chipP2Input = fichaSeleccionadaJ2;
@@ -232,23 +146,23 @@ function gestionarFichas() {
         // Aqui deberian ir: url de imagenes y numero del color para la pila de fichas del jugador 1
         switch (chipP1Input) {
             case 'img/game/ficha-finn.png':
-                image_chip_p1.src = '../EntregaFinal/img/game/ficha-finn.png';
+                image_chip_p1.src = './img/game/ficha-finn.png';
                 colorChipP1 = "#43BAFE"; 
                 break;
             case 'img/game/ficha-jake.png':
-                image_chip_p1.src = '../EntregaFinal/img/game/ficha-jake.png';
+                image_chip_p1.src = './img/game/ficha-jake.png';
                 colorChipP1 = "#F4B826";
                 break;
             case 'img/game/ficha-bmo.png':
-                image_chip_p1.src = '../EntregaFinal/img/game/ficha-bmo.png';
+                image_chip_p1.src = './img/game/ficha-bmo.png';
                 colorChipP1 = "#61CDC0";
                 break;
             case 'img/game/ficha-princesa.png':
-                image_chip_p1.src = '../EntregaFinal/img/game/ficha-princesa.png';
+                image_chip_p1.src = './img/game/ficha-princesa.png';
                 colorChipP1 = "#D31FC9";
                 break;
             case 'img/game/ficha-rey-helado.png':
-                image_chip_p1.src = '../EntregaFinal/img/game/ficha-rey-helado.png';
+                image_chip_p1.src = './img/game/ficha-rey-helado.png';
                 colorChipP1 = "#0725F5";
                 break;
         }
@@ -258,48 +172,48 @@ function gestionarFichas() {
         // Aqui deberian ir: url de imagenes y numero del color para la pila de fichas del jugador 2
         switch (chipP2Input) {
             case 'img/game/ficha-finn.png':
-                image_chip_p2.src = '../EntregaFinal/img/game/ficha-finn.png';
+                image_chip_p2.src = './img/game/ficha-finn.png';
                 colorChipP2 = "#43BAFE"; 
                 break;
             case 'img/game/ficha-jake.png':
-                image_chip_p2.src = '../EntregaFinal/img/game/ficha-jake.png';
+                image_chip_p2.src = './img/game/ficha-jake.png';
                 colorChipP2 = "#F4B826";
                 break;
             case 'img/game/ficha-bmo.png':
-                image_chip_p2.src = '../EntregaFinal/img/game/ficha-bmo.png';
+                image_chip_p2.src = './img/game/ficha-bmo.png';
                 colorChipP2 = "#61CDC0";
                 break;
             case 'img/game/ficha-princesa.png':
-                image_chip_p2.src = '../EntregaFinal/img/game/ficha-princesa.png';
+                image_chip_p2.src = './img/game/ficha-princesa.png';
                 colorChipP2 = "#D31FC9";
                 break;
             case 'img/game/ficha-rey-helado.png':
-                image_chip_p2.src = '../EntregaFinal/img/game/ficha-rey-helado.png';
+                image_chip_p2.src = './img/game/ficha-rey-helado.png';
                 colorChipP2 = "#0725F5";
                 break;
         }
         
 
         let image_background = new Image();
-        image_background.src = '../EntregaFinal/img/game/background-game.jpeg';
+        image_background.src = './img/game/background-game.jpeg';
 
         let image_board = new Image();
 
         switch (inLine) {
             case "4":
-                image_board.src = '../EntregaFinal/img/game/tablero-4-en-linea.png'
+                image_board.src = './img/game/tablero-4-en-linea.png'
                 break;
             case "5":
-                image_board.src = '../EntregaFinal/img/game/tablero-5-en-linea.png'
+                image_board.src = './img/game/tablero-5-en-linea.png'
                 break;
             case "6":
-                image_board.src = '../EntregaFinal/img/game/tablero-6-en-linea.png'
+                image_board.src = './img/game/tablero-6-en-linea.png'
                 break;
             case "7":
-                image_board.src = '../EntregaFinal/img/game/tablero-7-en-linea.png'
+                image_board.src = './img/game/tablero-7-en-linea.png'
                 break;
             default:
-                image_board.src = '../EntregaFinal/img/game/tablero-4-en-linea.png'
+                image_board.src = './img/game/tablero-4-en-linea.png'
                 break;
         }
 
@@ -310,8 +224,6 @@ function gestionarFichas() {
                 crearJuego(ctx, canvas, nameP1Input, nameP2Input, boardSize, image_chip_p1, image_chip_p2,colorChipP1,colorChipP2, image_background, image_board);
             }
         }
-    //}
-  //});
   }
     
 
@@ -325,23 +237,23 @@ function gestionarFichas() {
         canvas.addEventListener('mouseup'   , function(e) { game.onMouseUp(e);    }, false);
         canvas.addEventListener('mouseleave', function(e) { game.onMouseLeave(e); },false);
 
-        /*
-        let btn_menu = document.getElementById(""); // Aqui deberia ir el boton que solicita nuevamente los datos y fichas, función implementada
-        let btn_reset = document.getElementById(""); // Aqui deberia ir el boton que resetea el juego, solo se necesita obtenerlo, función implementada
-
-        btn_menu.addEventListener("click", function(e) {
+        
+        btn_exit_open_init.addEventListener("click", function(e) {
             game.endGame();
             game = null;
-            btns_menu.forEach(btn => {
-              btn.classList.add("hidden");
-            });
-            canvas.classList.add("hidden");
-            menu.classList.remove("hidden");
-            form.reset();
+            btn_exit_open_init.classList.add("ocultar");
+            btn_reset_game.classList.add("ocultar");
+            juego_menu.classList.remove("ocultar");
+            juego_ejecutandose.classList.add("ocultar");
+            nombrej1 = "";
+            nombrej2 = "";
+            fichaSeleccionadaJ1 = "";
+            fichaSeleccionadaJ2 = "";
+            tamanoLinea = "4";
         });
 
-        btn_reset.addEventListener("click", function(e) {
+        btn_reset_game.addEventListener("click", function(e) {
             game.reset();
-        });*/
+        });
     }    
 });

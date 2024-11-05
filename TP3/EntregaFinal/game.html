@@ -344,14 +344,14 @@
                                     <button class="btn-salir">Estoy seguro</button>
                                 </div>
                             </div>
-                            <button class="btn-cruz-juego">
+                            <button class="btn-cruz-juego" id="btn-exit-form">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 384 512">
-                                    <path fill="currentColor" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206L56.6 43.5c-11.3-13.6-31.5-15.4-45.1-4.1S-3.9 70.9 7.4 84.5L150.3 256L7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306l135.4 162.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256L376.6 84.5z" />
+                                    <path fill="white" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206L56.6 43.5c-11.3-13.6-31.5-15.4-45.1-4.1S-3.9 70.9 7.4 84.5L150.3 256L7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306l135.4 162.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256L376.6 84.5z" />
                                 </svg>
                             </button>
                         </div>
                         <!-- JUEGO EJECUTANDOSE -->
-                        <div class="juego-ejecutandose ocultar" id="juego-ejecutandose">
+                        <div class="juego-ejecutandose" id="juego-ejecutandose">
                                 
                                 <div id="game-background">
                                     <div class="seguro-salir ocultar">
@@ -392,25 +392,17 @@
                                     <div class="escape ocultar">
                                         <p>Presiona <span>Esc</span> para salir de la pantalla completa</p>
                                     </div>
-                                    <button class="btn-pausa">
-                                        <svg class="svg-reanudar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M14 19V5h4v14h-4Zm-8 0V5h4v14H6Z" />
-                                        </svg>
-                                        <svg class="ocultar svg-pausa" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M8 5.14v14l11-7l-11-7Z" />
-                                        </svg>
-                                    </button>
-                                    <button class="btn-jugardenuevo">
+                                    <button class="ocultar" id="btn-reset">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6s-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8s-3.58-8-8-8z" />
+                                            <path fill="white" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6s-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8s-3.58-8-8-8z" />
                                         </svg>
                                     </button>
-                                    <button class="btn-cruz-juego">
+                                    <button class="ocultar" id="btn-exit-open-init">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 384 512">
-                                            <path fill="currentColor" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206L56.6 43.5c-11.3-13.6-31.5-15.4-45.1-4.1S-3.9 70.9 7.4 84.5L150.3 256L7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306l135.4 162.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256L376.6 84.5z" />
+                                            <path fill="white" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206L56.6 43.5c-11.3-13.6-31.5-15.4-45.1-4.1S-3.9 70.9 7.4 84.5L150.3 256L7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306l135.4 162.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256L376.6 84.5z" />
                                         </svg>
                                     </button>
-                                    <canvas width="920" height="530" id="canvas-4-in-line" class=""></canvas>
+                                    <canvas width="920" height="530" id="canvas-4-in-line" class="ocultar"></canvas>
                                 </div>
                             <!--<div class="cuatro-linea">
                                 <div class="elegir-tablero">
